@@ -45,6 +45,9 @@ Shipped profile ABIs (v0):
 - `profiles/obi_doc_paged_document_v0.h` - `obi.profile:doc.paged_document-0`
 - `profiles/obi_asset_mesh_io_v0.h` - `obi.profile:asset.mesh_io-0`
 - `profiles/obi_asset_scene_io_v0.h` - `obi.profile:asset.scene_io-0`
+- `profiles/obi_net_types_v0.h` - shared net types (IP/socket addresses)
+- `profiles/obi_net_dns_v0.h` - `obi.profile:net.dns-0`
+- `profiles/obi_net_socket_v0.h` - `obi.profile:net.socket-0`
 - `profiles/obi_net_http_client_v0.h` - `obi.profile:net.http_client-0`
 - `profiles/obi_net_websocket_v0.h` - `obi.profile:net.websocket-0`
 - `profiles/obi_net_tls_v0.h` - `obi.profile:net.tls-0`

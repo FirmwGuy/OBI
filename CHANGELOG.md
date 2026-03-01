@@ -29,6 +29,7 @@ The canonical spec version is defined in `OBI.md`.
 - Added math profiles for BigInt, BigFloat, and a BLAS subset
 - Added a websocket client profile
 - Added a TLS session profile (OpenSSL/GNUTLS/mbedTLS-style)
+- Added DNS and socket profiles plus shared net address types
 - Added a crypto hash profile
 - Added crypto profiles for CSPRNG, AEAD encryption, signing, and KDFs
 - Added a decimal arithmetic profile (mpdecimal-style)

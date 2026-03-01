@@ -39,6 +39,8 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:text.raster_cache-0` (Glyph Rasterization + Cache): [OBI_TextRasterCache.md](OBI_TextRasterCache.md)
 - `obi.profile:text.layout-0` (Text Layout): [OBI_TextLayout.md](OBI_TextLayout.md)
 - `obi.profile:text.spellcheck-0` (Spellcheck): [OBI_TextSpellcheck.md](OBI_TextSpellcheck.md)
+- `obi.profile:net.dns-0` (DNS): [OBI_NetDNS.md](OBI_NetDNS.md)
+- `obi.profile:net.socket-0` (Sockets): [OBI_NetSocket.md](OBI_NetSocket.md)
 - `obi.profile:net.http_client-0` (HTTP Client): [OBI_NetHttpClient.md](OBI_NetHttpClient.md)
 - `obi.profile:net.websocket-0` (WebSocket Client): [OBI_NetWebSocket.md](OBI_NetWebSocket.md)
 - `obi.profile:net.tls-0` (TLS Session): [OBI_NetTLS.md](OBI_NetTLS.md)

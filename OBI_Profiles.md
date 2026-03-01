@@ -121,6 +121,12 @@ the profiles they need.
 16) **TLS Session** (`obi.profile:net.tls-0`)  
    A portable TLS client session surface for non-HTTP protocols (OpenSSL/GNUTLS/mbedTLS class).
 
+16b) **DNS** (`obi.profile:net.dns-0`)  
+   Resolve hostnames to IP addresses with optional timeout/cancellation.
+
+16c) **Sockets** (`obi.profile:net.socket-0`)  
+   TCP connect/listen/accept returning reader/writer transports suitable for TLS.
+
 ### Crypto baseline (common for integrity and secure protocols)
 
 17) **Random Bytes** (`obi.profile:crypto.random-0`)  
