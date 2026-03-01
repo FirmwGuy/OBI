@@ -72,5 +72,6 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:media.audio_resample-0` (Audio Resample): [OBI_MediaAudioResample.md](OBI_MediaAudioResample.md)
 - `obi.profile:media.demux-0` (Container Demux): [OBI_MediaDemux.md](OBI_MediaDemux.md)
 - `obi.profile:media.av_decode-0` (Audio/Video Decode): [OBI_MediaAVDecode.md](OBI_MediaAVDecode.md)
+- `obi.profile:media.av_encode-0` (Audio/Video Encode): [OBI_MediaAVEncode.md](OBI_MediaAVEncode.md)
 - `obi.profile:media.video_scale_convert-0` (Video Scale/Convert): [OBI_MediaVideoScaleConvert.md](OBI_MediaVideoScaleConvert.md)
 - `obi.profile:media.mux-0` (Container Mux): [OBI_MediaMux.md](OBI_MediaMux.md)

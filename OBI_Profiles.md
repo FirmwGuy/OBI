@@ -215,6 +215,9 @@ the profiles they need.
 38) **AV Decode** (`obi.profile:media.av_decode-0`)  
     Minimal packet-in / frame-out decoding surface (FFmpeg/libavcodec, gstreamer wrappers).
 
+38b) **AV Encode** (`obi.profile:media.av_encode-0`)  
+    Minimal frame-in / packet-out encoding surface (FFmpeg/libavcodec, platform encoders).
+
 39) **Video Scale/Convert** (`obi.profile:media.video_scale_convert-0`)  
     CPU scaling and pixel format conversion (libswscale/libyuv class).
 

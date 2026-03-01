@@ -75,6 +75,7 @@ Shipped profile ABIs (v0):
 - `profiles/obi_media_audio_resample_v0.h` - `obi.profile:media.audio_resample-0`
 - `profiles/obi_media_demux_v0.h` - `obi.profile:media.demux-0`
 - `profiles/obi_media_av_decode_v0.h` - `obi.profile:media.av_decode-0`
+- `profiles/obi_media_av_encode_v0.h` - `obi.profile:media.av_encode-0`
 - `profiles/obi_media_video_scale_convert_v0.h` - `obi.profile:media.video_scale_convert-0`
 - `profiles/obi_media_mux_v0.h` - `obi.profile:media.mux-0`
 

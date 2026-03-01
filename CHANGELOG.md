@@ -24,6 +24,7 @@ The canonical spec version is defined in `OBI.md`.
 - Added data profiles for compression and archive containers
 - Added database profiles for transactional KV and SQL backends (LMDB/SQLite-style)
 - Added media profiles for image codecs, audio device I/O, and A/V decoding
+- Added an A/V encoding profile (frame-in / packet-out)
 - Added media container and processing profiles (demux/mux, audio mix/resample, video scale/convert)
 - Extended shared media types with basic audio/video format structs and planar YUV buffer layouts
 - Added math profiles for BigInt, BigFloat, and a BLAS subset
