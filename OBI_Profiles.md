@@ -110,6 +110,9 @@ the profiles they need.
 13) **Spellcheck** (`obi.profile:text.spellcheck-0`)  
     Spellchecking and suggestions (aspell/hunspell/enchant style) for editors and tooling.
 
+13b) **IME** (`obi.profile:text.ime-0`)  
+    Composition-aware text input events (preedit/commit) for editors and complex text entry.
+
 ### Networking baseline (needed for internet services)
 
 14) **HTTP Client** (`obi.profile:net.http_client-0`)  

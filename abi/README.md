@@ -37,6 +37,7 @@ Shipped profile ABIs (v0):
 - `profiles/obi_text_raster_cache_v0.h` - `obi.profile:text.raster_cache-0`
 - `profiles/obi_text_layout_v0.h` - `obi.profile:text.layout-0`
 - `profiles/obi_text_spellcheck_v0.h` - `obi.profile:text.spellcheck-0`
+- `profiles/obi_text_ime_v0.h` - `obi.profile:text.ime-0`
 - `profiles/obi_doc_inspect_v0.h` - `obi.profile:doc.inspect-0`
 - `profiles/obi_doc_text_decode_v0.h` - `obi.profile:doc.text_decode-0`
 - `profiles/obi_doc_markup_events_v0.h` - `obi.profile:doc.markup_events-0`
