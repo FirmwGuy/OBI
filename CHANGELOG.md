@@ -16,6 +16,7 @@ The canonical spec version is defined in `OBI.md`.
 ### Added
 
 - Added FAQ and provider guidance docs (`OBI_FAQ.md`, `OBI_PROVIDER_GUIDE.md`)
+- Added ABI conventions and conformance guidance docs
 - Added a profile inventory index (`profiles/INDEX.md`)
 - Added normative ABI headers for window/input and text profiles
 - Expanded `net.http_client` profile with extended request entrypoints (`request_ex`)

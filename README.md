@@ -28,6 +28,9 @@ gstreamer, etc.).
 - `OBI_Profiles.md` - Profile guide (informative companion)
 - `OBI_FAQ.md` - FAQ (informative companion)
 - `OBI_PROVIDER_GUIDE.md` - Provider authoring/packaging guidance (informative companion)
+- `OBI_ABI_CONVENTIONS.md` - ABI rules and conventions (normative companion)
+- `OBI_CONFORMANCE.md` - Host/provider conformance checklists (informative companion)
+- `OBI_PROFILE_TEMPLATE.md` - Template for new profiles (informative)
 - `profiles/` - Individual profile specifications and extensions
 - `abi/` - Reference C headers (normative ABI shapes)
 
