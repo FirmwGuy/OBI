@@ -50,6 +50,9 @@ the profiles they need.
 2) **Core WaitSet** (`obi.profile:core.waitset-0`)  
    Optional OS-level waitable hints (fds/handles) to integrate pump-driven providers efficiently.
 
+2b) **Core Cancel** (`obi.profile:core.cancel-0`)  
+   Cancellation sources/tokens for cooperative cancellation across long-running work.
+
 ### OS baseline (optional for toolchains)
 
 3) **Filesystem Watch** (`obi.profile:os.fs_watch-0`)  

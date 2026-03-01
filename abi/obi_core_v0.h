@@ -202,6 +202,38 @@ struct obi_writer_v0 {
     void* ctx;
 };
 
+/* Optional cancellation token for long-running work.
+ *
+ * Convention:
+ * - If token.api == NULL, the token is treated as "never cancelled".
+ */
+typedef struct obi_cancel_token_v0 obi_cancel_token_v0;
+
+enum {
+    OBI_CANCEL_CAP_REASON_UTF8 = 1ull << 0,
+};
+
+typedef struct obi_cancel_token_api_v0 {
+    uint32_t abi_major;
+    uint32_t abi_minor;
+    uint32_t struct_size;
+    uint32_t reserved;
+    uint64_t caps;
+
+    /* Returns true when cancellation has been requested. */
+    bool (*is_cancelled)(void* ctx);
+
+    /* Optional: provider-owned reason view (UTF-8). Valid until token destruction. */
+    obi_status (*reason_utf8)(void* ctx, obi_utf8_view_v0* out_reason);
+
+    void (*destroy)(void* ctx);
+} obi_cancel_token_api_v0;
+
+struct obi_cancel_token_v0 {
+    const obi_cancel_token_api_v0* api;
+    void* ctx;
+};
+
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
