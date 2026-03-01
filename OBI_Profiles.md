@@ -58,6 +58,10 @@ the profiles they need.
 3) **Filesystem Watch** (`obi.profile:os.fs_watch-0`)  
    Watch filesystem paths and receive change events (inotify/FSEvents/ReadDirectoryChangesW class).
 
+3b) **Filesystem** (`obi.profile:os.fs-0`)  
+   Open files for streaming reads/writes, stat paths, create/remove/rename, and optionally iterate
+   directories.
+
 ### GUI baseline (common for tools and POCs)
 
 4) **Window + Input** (`obi.profile:gfx.window_input-0`)  

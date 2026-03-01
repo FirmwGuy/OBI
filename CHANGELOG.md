@@ -40,6 +40,7 @@ The canonical spec version is defined in `OBI.md`.
 - Added shared gfx/geometry ABI headers and removed duplicate window-id typedefs between gfx profiles
 - Added a core waitset profile for OS-level waitable integration with pump-driven providers
 - Added core cancellation token support and a cancel-source profile
+- Added an OS filesystem profile (open/read/write/stat/mkdir/remove/rename, optional directory iteration)
 - Added an OS filesystem watch profile (inotify/FSEvents/ReadDirectoryChangesW-style)
 - Added document profiles for deep inspection, text decoding, markdown parsing, and paged document rasterization
 - Added event-based parser profiles for markup (XML/HTML), markdown, and structured data (JSON/YAML/TOML)
