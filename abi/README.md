@@ -20,8 +20,10 @@ Shipped profile ABIs (v0):
 - `profiles/obi_text_shape_v0.h` - `obi.profile:text.shape-0`
 - `profiles/obi_text_raster_cache_v0.h` - `obi.profile:text.raster_cache-0`
 - `profiles/obi_net_http_client_v0.h` - `obi.profile:net.http_client-0`
+- `profiles/obi_net_websocket_v0.h` - `obi.profile:net.websocket-0`
 - `profiles/obi_data_compression_v0.h` - `obi.profile:data.compression-0`
 - `profiles/obi_data_archive_v0.h` - `obi.profile:data.archive-0`
+- `profiles/obi_crypto_hash_v0.h` - `obi.profile:crypto.hash-0`
 - `profiles/obi_math_bigint_v0.h` - `obi.profile:math.bigint-0`
 - `profiles/obi_math_bigfloat_v0.h` - `obi.profile:math.bigfloat-0`
 - `profiles/obi_math_blas_v0.h` - `obi.profile:math.blas-0`

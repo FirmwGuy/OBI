@@ -16,9 +16,12 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:text.shape-0` (Text Shaping): [OBI_TextShape.md](OBI_TextShape.md)
 - `obi.profile:text.raster_cache-0` (Glyph Rasterization + Cache): [OBI_TextRasterCache.md](OBI_TextRasterCache.md)
 - `obi.profile:net.http_client-0` (HTTP Client): [OBI_NetHttpClient.md](OBI_NetHttpClient.md)
+- `obi.profile:net.websocket-0` (WebSocket Client): [OBI_NetWebSocket.md](OBI_NetWebSocket.md)
 
 - `obi.profile:data.compression-0` (Data Compression): [OBI_DataCompression.md](OBI_DataCompression.md)
 - `obi.profile:data.archive-0` (Archive Containers): [OBI_DataArchive.md](OBI_DataArchive.md)
+
+- `obi.profile:crypto.hash-0` (Hash): [OBI_CryptoHash.md](OBI_CryptoHash.md)
 
 - `obi.profile:math.bigint-0` (Big Integers): [OBI_MathBigInt.md](OBI_MathBigInt.md)
 - `obi.profile:math.bigfloat-0` (Big Floats): [OBI_MathBigFloat.md](OBI_MathBigFloat.md)

@@ -24,6 +24,8 @@ The canonical spec version is defined in `OBI.md`.
 - Added data profiles for compression and archive containers
 - Added media profiles for image codecs, audio device I/O, and A/V decoding
 - Added math profiles for BigInt, BigFloat, and a BLAS subset
+- Added a websocket client profile
+- Added a crypto hash profile
 
 ## [0.1.0] - 2026-03-01
 

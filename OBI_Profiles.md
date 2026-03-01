@@ -60,34 +60,42 @@ Profiles exist so we can standardize *only what we need*, when we need it.
 6) **HTTP Client** (`obi.profile:net.http_client-0`)  
    A request/response interface with optional async/pump integration, compatible with curl/libsoup.
 
+7) **WebSocket Client** (`obi.profile:net.websocket-0`)  
+   Duplex messaging (send/receive) with optional async/pump integration.
+
+### Crypto baseline (common for integrity/content addressing)
+
+8) **Hash** (`obi.profile:crypto.hash-0`)  
+   Streaming hashes (blake3/sha256/etc.) for integrity checks and content addressing.
+
 ### Data baseline (common once you ingest or ship artifacts)
 
-7) **Data Compression** (`obi.profile:data.compression-0`)  
+9) **Data Compression** (`obi.profile:data.compression-0`)  
    Streaming compression/decompression (zlib/zstd/brotli/lz4 style) via OBI readers/writers.
 
-8) **Archive Containers** (`obi.profile:data.archive-0`)  
+10) **Archive Containers** (`obi.profile:data.archive-0`)  
    Stream archive entries in/out (libarchive/libzip style).
 
 ### Media baseline (common for tools, ingestion, and playback)
 
-9) **Image Codec** (`obi.profile:media.image_codec-0`)  
+11) **Image Codec** (`obi.profile:media.image_codec-0`)  
    Decode images to CPU pixel buffers and encode pixels back out (stb_image/libpng/libjpeg/etc.).
 
-10) **Audio Device** (`obi.profile:media.audio_device-0`)  
+12) **Audio Device** (`obi.profile:media.audio_device-0`)  
     Open playback/capture streams and write/read PCM frames (SDL/PortAudio/platform backends).
 
-11) **AV Decode** (`obi.profile:media.av_decode-0`)  
+13) **AV Decode** (`obi.profile:media.av_decode-0`)  
     Minimal packet-in / frame-out decoding surface (FFmpeg/libavcodec, gstreamer wrappers).
 
 ### Math baseline (only when you need these semantics)
 
-12) **Big Integers** (`obi.profile:math.bigint-0`)  
+14) **Big Integers** (`obi.profile:math.bigint-0`)  
     Arbitrary precision integer values (GMP-style).
 
-13) **Big Floats** (`obi.profile:math.bigfloat-0`)  
+15) **Big Floats** (`obi.profile:math.bigfloat-0`)  
     Arbitrary precision floating-point values (MPFR-style).
 
-14) **BLAS Subset** (`obi.profile:math.blas-0`)  
+16) **BLAS Subset** (`obi.profile:math.blas-0`)  
     A small BLAS surface (GEMM) for swapping matrix backends (OpenBLAS/MKL/etc.).
 
 ---
