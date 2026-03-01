@@ -33,6 +33,20 @@ enum {
     OBI_STATUS_IO_ERROR          = 8,
     OBI_STATUS_PERMISSION_DENIED = 9,
     OBI_STATUS_UNAVAILABLE       = 10,
+    /* Caller-provided output buffer is too small (use size-out parameters to retry). */
+    OBI_STATUS_BUFFER_TOO_SMALL  = 11,
+};
+
+/* Provider-level capability bits (obi_provider_api_v0.caps). These describe coarse runtime traits
+ * and do not replace per-profile capability bitsets.
+ */
+enum {
+    /* Provider is safe to call concurrently from multiple threads (per profile rules still apply). */
+    OBI_PROVIDER_CAP_THREAD_SAFE     = 1ull << 0,
+    /* Provider may create threads internally (for async I/O, decoding, etc.). */
+    OBI_PROVIDER_CAP_SPAWNS_THREADS  = 1ull << 1,
+    /* Provider requires an explicit pump to make progress for at least one profile. */
+    OBI_PROVIDER_CAP_REQUIRES_PUMP   = 1ull << 2,
 };
 
 typedef enum obi_log_level {
@@ -48,6 +62,16 @@ typedef enum obi_time_clock {
     /* Wallclock (Unix epoch) when available; may be zero/unsupported. */
     OBI_TIME_WALL_NS = 1,
 } obi_time_clock;
+
+typedef struct obi_bytes_view_v0 {
+    const void* data;
+    size_t size;
+} obi_bytes_view_v0;
+
+typedef struct obi_utf8_view_v0 {
+    const char* data;
+    size_t size;
+} obi_utf8_view_v0;
 
 /* Common vtable header: used for ABI validation. */
 typedef struct obi_vtable_header_v0 {
@@ -158,4 +182,3 @@ struct obi_reader_v0 {
 #endif
 
 #endif /* OBI_CORE_V0_H */
-

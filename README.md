@@ -26,6 +26,8 @@ gstreamer, etc.).
 
 - `OBI.md` - OBI Core specification (v0.1.0 draft)
 - `OBI_Profiles.md` - Profile guide (informative companion)
+- `OBI_FAQ.md` - FAQ (informative companion)
+- `OBI_PROVIDER_GUIDE.md` - Provider authoring/packaging guidance (informative companion)
 - `profiles/` - Individual profile specifications and extensions
 - `abi/` - Reference C headers (normative ABI shapes)
 
@@ -40,4 +42,3 @@ gstreamer, etc.).
 
 Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0), same as the TCA and
 OGIF projects. See `LICENSE`.
-

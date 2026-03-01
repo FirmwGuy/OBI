@@ -17,6 +17,10 @@ enum {
     OBI_HTTP_CAP_ASYNC = 1ull << 0,
     /* Async requests progress only via a pump profile (no internal threads). */
     OBI_HTTP_CAP_REQUIRES_PUMP = 1ull << 1,
+    /* Provider supports request_ex / request_async_ex with extended request options. */
+    OBI_HTTP_CAP_REQUEST_EX = 1ull << 2,
+    /* Provider supports async requests with BODY_READER (streaming upload). */
+    OBI_HTTP_CAP_ASYNC_BODY_READER = 1ull << 3,
 };
 
 typedef struct obi_http_header_kv_v0 {
@@ -57,6 +61,32 @@ typedef struct obi_http_request_v0 {
     /* Optional. */
     obi_http_body_v0 body;
 } obi_http_request_v0;
+
+typedef struct obi_http_request_ex_v0 {
+    uint32_t struct_size;
+    uint32_t flags;
+
+    /* Optional; defaults to "GET" when NULL. */
+    const char* method;
+    /* Required. */
+    const char* url;
+    /* Optional. */
+    obi_http_headers_view_v0 headers;
+    /* Optional. */
+    obi_http_body_v0 body;
+
+    /* Request options (0/NULL means provider default). */
+    uint64_t timeout_ns;
+
+    uint32_t max_redirects;
+    uint8_t  follow_redirects;
+    uint8_t  tls_verify_peer;
+    uint8_t  tls_verify_host;
+    uint8_t  reserved8;
+
+    /* Optional, UTF-8 NUL-terminated user agent string. */
+    const char* user_agent;
+} obi_http_request_ex_v0;
 
 typedef struct obi_http_response_v0 {
     int32_t status_code;
@@ -119,6 +149,15 @@ typedef struct obi_http_client_api_v0 {
     obi_status (*request_async)(void* ctx,
                                 const obi_http_request_v0* req,
                                 obi_http_job_v0* out_job);
+
+    /* Extended request entrypoints (optional). */
+    obi_status (*request_ex)(void* ctx,
+                             const obi_http_request_ex_v0* req,
+                             obi_http_response_v0* out_resp);
+
+    obi_status (*request_async_ex)(void* ctx,
+                                   const obi_http_request_ex_v0* req,
+                                   obi_http_job_v0* out_job);
 } obi_http_client_api_v0;
 
 struct obi_http_client_v0 {
@@ -131,4 +170,3 @@ struct obi_http_client_v0 {
 #endif
 
 #endif /* OBI_PROFILE_NET_HTTP_CLIENT_V0_H */
-

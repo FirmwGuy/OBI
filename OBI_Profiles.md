@@ -13,7 +13,7 @@ OBI Core defines the *mechanics* for integrating providers (versioning, capabili
 Profiles define the *domain surface*:
 
 - GUI: windows, input, 2D rendering
-- Text: shaping (bidi/harfbuzz), glyph rasterization + atlas caching
+- Text: shaping (bidi/harfbuzz), glyph rasterization + host-managed atlas caching
 - Networking: HTTP clients (curl/libsoup), websockets, etc.
 - Media: demux/decode/filter (ffmpeg/gstreamer), resampling
 - Data: DB handles/transactions (sqlite/lmdb), compression/archives
@@ -52,7 +52,8 @@ Profiles exist so we can standardize *only what we need*, when we need it.
    FriBidi + HarfBuzz style shaping: UTF-8 in, glyph indices + positions out.
 
 5) **Text Raster Cache** (`obi.profile:text.raster_cache-0`)  
-   Glyph rasterization + dynamic atlas caching (usually LRU) with explicit eviction policy.
+   Glyph rasterization + optional internal caching. Hosts typically pack glyphs into their own atlas
+   using `obi.profile:gfx.render2d-0`.
 
 ### Networking baseline (needed for internet services)
 
@@ -83,4 +84,3 @@ runtime ABI and integration mechanics.
 **Q: Do we need a profile for every library?**  
 No. Many libraries can be wrapped behind existing profiles (handles + streams + pump). Add a new
 profile only when you need a stable domain contract across multiple implementations.
-
