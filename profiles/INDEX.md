@@ -48,4 +48,9 @@ This index lists the profile documents currently present in this repository.
 
 - `obi.profile:media.image_codec-0` (Image Decode/Encode): [OBI_MediaImageCodec.md](OBI_MediaImageCodec.md)
 - `obi.profile:media.audio_device-0` (Audio Device I/O): [OBI_MediaAudioDevice.md](OBI_MediaAudioDevice.md)
+- `obi.profile:media.audio_mix-0` (Audio Mix): [OBI_MediaAudioMix.md](OBI_MediaAudioMix.md)
+- `obi.profile:media.audio_resample-0` (Audio Resample): [OBI_MediaAudioResample.md](OBI_MediaAudioResample.md)
+- `obi.profile:media.demux-0` (Container Demux): [OBI_MediaDemux.md](OBI_MediaDemux.md)
 - `obi.profile:media.av_decode-0` (Audio/Video Decode): [OBI_MediaAVDecode.md](OBI_MediaAVDecode.md)
+- `obi.profile:media.video_scale_convert-0` (Video Scale/Convert): [OBI_MediaVideoScaleConvert.md](OBI_MediaVideoScaleConvert.md)
+- `obi.profile:media.mux-0` (Container Mux): [OBI_MediaMux.md](OBI_MediaMux.md)

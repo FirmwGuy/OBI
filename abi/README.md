@@ -51,7 +51,12 @@ Shipped profile ABIs (v0):
 - `profiles/obi_media_types_v0.h` - shared media enums (pixel/audio formats)
 - `profiles/obi_media_image_codec_v0.h` - `obi.profile:media.image_codec-0`
 - `profiles/obi_media_audio_device_v0.h` - `obi.profile:media.audio_device-0`
+- `profiles/obi_media_audio_mix_v0.h` - `obi.profile:media.audio_mix-0`
+- `profiles/obi_media_audio_resample_v0.h` - `obi.profile:media.audio_resample-0`
+- `profiles/obi_media_demux_v0.h` - `obi.profile:media.demux-0`
 - `profiles/obi_media_av_decode_v0.h` - `obi.profile:media.av_decode-0`
+- `profiles/obi_media_video_scale_convert_v0.h` - `obi.profile:media.video_scale_convert-0`
+- `profiles/obi_media_mux_v0.h` - `obi.profile:media.mux-0`
 
 These headers are intended to be:
 

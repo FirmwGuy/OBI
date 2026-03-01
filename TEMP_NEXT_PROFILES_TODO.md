@@ -25,10 +25,10 @@ and wired into indices, delete this file.
 - [x] Add `obi.profile:asset.mesh_io-0` (OBJ/glTF mesh import/export)
 - [x] Add `obi.profile:asset.scene_io-0` (glTF scenes; likely OGIF-oriented output)
 
-- [ ] Add `obi.profile:media.demux-0` and `obi.profile:media.mux-0` (containers <-> packet streams)
-- [ ] Add `obi.profile:media.audio_mix-0` (mix N streams into one)
-- [ ] Add `obi.profile:media.audio_resample-0` (soxr/libsamplerate/swresample class)
-- [ ] Add `obi.profile:media.video_scale_convert-0` (swscale/libyuv class)
+- [x] Add `obi.profile:media.demux-0` and `obi.profile:media.mux-0` (containers <-> packet streams)
+- [x] Add `obi.profile:media.audio_mix-0` (mix N streams into one)
+- [x] Add `obi.profile:media.audio_resample-0` (soxr/libsamplerate/swresample class)
+- [x] Add `obi.profile:media.video_scale_convert-0` (swscale/libyuv class)
 
 - [ ] Add `obi.profile:db.kv-0` (LMDB/RocksDB transactional KV)
 - [ ] Add `obi.profile:db.sql-0` (SQLite-style prepare/bind/step/column)

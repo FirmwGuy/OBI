@@ -23,6 +23,8 @@ The canonical spec version is defined in `OBI.md`.
 - Extended `gfx.render2d` ABI with optional `begin_frame/end_frame` window targeting
 - Added data profiles for compression and archive containers
 - Added media profiles for image codecs, audio device I/O, and A/V decoding
+- Added media container and processing profiles (demux/mux, audio mix/resample, video scale/convert)
+- Extended shared media types with basic audio/video format structs and planar YUV buffer layouts
 - Added math profiles for BigInt, BigFloat, and a BLAS subset
 - Added a websocket client profile
 - Added a crypto hash profile
