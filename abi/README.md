@@ -35,6 +35,8 @@ Shipped profile ABIs (v0):
 - `profiles/obi_doc_text_decode_v0.h` - `obi.profile:doc.text_decode-0`
 - `profiles/obi_doc_markdown_commonmark_v0.h` - `obi.profile:doc.markdown_commonmark-0`
 - `profiles/obi_doc_paged_document_v0.h` - `obi.profile:doc.paged_document-0`
+- `profiles/obi_asset_mesh_io_v0.h` - `obi.profile:asset.mesh_io-0`
+- `profiles/obi_asset_scene_io_v0.h` - `obi.profile:asset.scene_io-0`
 - `profiles/obi_net_http_client_v0.h` - `obi.profile:net.http_client-0`
 - `profiles/obi_net_websocket_v0.h` - `obi.profile:net.websocket-0`
 - `profiles/obi_data_compression_v0.h` - `obi.profile:data.compression-0`

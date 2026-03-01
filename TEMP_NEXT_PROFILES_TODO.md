@@ -22,8 +22,8 @@ and wired into indices, delete this file.
 
 - [x] Add `obi.profile:text.spellcheck-0` (aspell/hunspell/enchant-style spellcheck + suggestions)
 
-- [ ] Add `obi.profile:asset.mesh_io-0` (OBJ/glTF mesh import/export)
-- [ ] Add `obi.profile:asset.scene_io-0` (glTF scenes; likely OGIF-oriented output)
+- [x] Add `obi.profile:asset.mesh_io-0` (OBJ/glTF mesh import/export)
+- [x] Add `obi.profile:asset.scene_io-0` (glTF scenes; likely OGIF-oriented output)
 
 - [ ] Add `obi.profile:media.demux-0` and `obi.profile:media.mux-0` (containers <-> packet streams)
 - [ ] Add `obi.profile:media.audio_mix-0` (mix N streams into one)

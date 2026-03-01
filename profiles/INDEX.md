@@ -23,6 +23,8 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:doc.text_decode-0` (Text Decode): [OBI_DocTextDecode.md](OBI_DocTextDecode.md)
 - `obi.profile:doc.markdown_commonmark-0` (Markdown Parse): [OBI_DocMarkdownCommonMark.md](OBI_DocMarkdownCommonMark.md)
 - `obi.profile:doc.paged_document-0` (Paged Documents): [OBI_DocPagedDocument.md](OBI_DocPagedDocument.md)
+- `obi.profile:asset.mesh_io-0` (Mesh Import): [OBI_AssetMeshIO.md](OBI_AssetMeshIO.md)
+- `obi.profile:asset.scene_io-0` (Scene Import): [OBI_AssetSceneIO.md](OBI_AssetSceneIO.md)
 - `obi.profile:text.segmenter-0` (Text Segmentation): [OBI_TextSegmenter.md](OBI_TextSegmenter.md)
 - `obi.profile:text.font_db-0` (Font Discovery): [OBI_TextFontDB.md](OBI_TextFontDB.md)
 - `obi.profile:text.shape-0` (Text Shaping): [OBI_TextShape.md](OBI_TextShape.md)

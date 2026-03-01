@@ -16,6 +16,7 @@ Profiles define the *domain surface*:
 - GPU/3D: portable GPU backends and minimal 3D rendering for tools
 - Text: shaping (bidi/harfbuzz), glyph rasterization + host-managed atlas caching
 - Documents: inspection, decoding, markdown/PDF and other open standards
+- Assets: mesh/scene import/export (OBJ/glTF/etc.)
 - Networking: HTTP clients (curl/libsoup), websockets, etc.
 - Media: demux/decode/filter (ffmpeg/gstreamer), resampling
 - Data: DB handles/transactions (sqlite/lmdb), compression/archives
@@ -119,43 +120,51 @@ Profiles exist so we can standardize *only what we need*, when we need it.
 22) **Paged Documents** (`obi.profile:doc.paged_document-0`)  
     Open and rasterize PDF/SVG-like paged docs; optional text extraction.
 
+### Asset baseline (optional for 3D ingestion)
+
+23) **Mesh Import** (`obi.profile:asset.mesh_io-0`)  
+    Import triangle meshes (positions/normals/uvs/indices) from common formats.
+
+24) **Scene Import** (`obi.profile:asset.scene_io-0`)  
+    Import 3D scenes and referenced blobs (glTF/assimp-style).
+
 ### Media baseline (common for tools, ingestion, and playback)
 
-23) **Image Codec** (`obi.profile:media.image_codec-0`)  
+25) **Image Codec** (`obi.profile:media.image_codec-0`)  
    Decode images to CPU pixel buffers and encode pixels back out (stb_image/libpng/libjpeg/etc.).
 
-24) **Audio Device** (`obi.profile:media.audio_device-0`)  
+26) **Audio Device** (`obi.profile:media.audio_device-0`)  
     Open playback/capture streams and write/read PCM frames (SDL/PortAudio/platform backends).
 
-25) **AV Decode** (`obi.profile:media.av_decode-0`)  
+27) **AV Decode** (`obi.profile:media.av_decode-0`)  
     Minimal packet-in / frame-out decoding surface (FFmpeg/libavcodec, gstreamer wrappers).
 
 ### Physics baseline (optional for simulation and games)
 
-26) **2D Physics World** (`obi.profile:phys.world2d-0`)  
+28) **2D Physics World** (`obi.profile:phys.world2d-0`)  
     A minimal 2D rigid-body world (Box2D/Chipmunk2D class).
 
-27) **3D Physics World** (`obi.profile:phys.world3d-0`)  
+29) **3D Physics World** (`obi.profile:phys.world3d-0`)  
     A minimal 3D rigid-body world (Bullet/Jolt/PhysX class).
 
-28) **Physics Debug Draw** (`obi.profile:phys.debug_draw-0`)  
+30) **Physics Debug Draw** (`obi.profile:phys.debug_draw-0`)  
     Extract debug line/tri primitives for visualization.
 
 ### Math baseline (only when you need these semantics)
 
-29) **Big Integers** (`obi.profile:math.bigint-0`)  
+31) **Big Integers** (`obi.profile:math.bigint-0`)  
     Arbitrary precision integer values (GMP-style).
 
-30) **Big Floats** (`obi.profile:math.bigfloat-0`)  
+32) **Big Floats** (`obi.profile:math.bigfloat-0`)  
     Arbitrary precision floating-point values (MPFR-style).
 
-31) **Decimal Arithmetic** (`obi.profile:math.decimal-0`)  
+33) **Decimal Arithmetic** (`obi.profile:math.decimal-0`)  
     Base-10 decimal contexts and operations (mpdecimal-style).
 
-32) **Scientific Ops** (`obi.profile:math.scientific_ops-0`)  
+34) **Scientific Ops** (`obi.profile:math.scientific_ops-0`)  
     A small special-functions surface suitable for GSL-like providers.
 
-33) **BLAS Subset** (`obi.profile:math.blas-0`)  
+35) **BLAS Subset** (`obi.profile:math.blas-0`)  
     A small BLAS surface (GEMM) for swapping matrix backends (OpenBLAS/MKL/etc.).
 
 ---
