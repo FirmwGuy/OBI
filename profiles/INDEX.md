@@ -33,6 +33,7 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:text.spellcheck-0` (Spellcheck): [OBI_TextSpellcheck.md](OBI_TextSpellcheck.md)
 - `obi.profile:net.http_client-0` (HTTP Client): [OBI_NetHttpClient.md](OBI_NetHttpClient.md)
 - `obi.profile:net.websocket-0` (WebSocket Client): [OBI_NetWebSocket.md](OBI_NetWebSocket.md)
+- `obi.profile:net.tls-0` (TLS Session): [OBI_NetTLS.md](OBI_NetTLS.md)
 
 - `obi.profile:data.compression-0` (Data Compression): [OBI_DataCompression.md](OBI_DataCompression.md)
 - `obi.profile:data.archive-0` (Archive Containers): [OBI_DataArchive.md](OBI_DataArchive.md)

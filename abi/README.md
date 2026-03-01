@@ -39,6 +39,7 @@ Shipped profile ABIs (v0):
 - `profiles/obi_asset_scene_io_v0.h` - `obi.profile:asset.scene_io-0`
 - `profiles/obi_net_http_client_v0.h` - `obi.profile:net.http_client-0`
 - `profiles/obi_net_websocket_v0.h` - `obi.profile:net.websocket-0`
+- `profiles/obi_net_tls_v0.h` - `obi.profile:net.tls-0`
 - `profiles/obi_data_compression_v0.h` - `obi.profile:data.compression-0`
 - `profiles/obi_data_archive_v0.h` - `obi.profile:data.archive-0`
 - `profiles/obi_data_file_type_v0.h` - `obi.profile:data.file_type-0`

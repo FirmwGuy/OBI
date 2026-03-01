@@ -33,7 +33,7 @@ and wired into indices, delete this file.
 - [x] Add `obi.profile:db.kv-0` (LMDB/RocksDB transactional KV)
 - [x] Add `obi.profile:db.sql-0` (SQLite-style prepare/bind/step/column)
 
-- [ ] Add `obi.profile:net.tls-0` (OpenSSL/GNUTLS/mbedTLS session/certs/ALPN)
+- [x] Add `obi.profile:net.tls-0` (OpenSSL/GNUTLS/mbedTLS session/certs/ALPN)
 
 - [ ] Add `obi.profile:crypto.random-0` (CSPRNG)
 - [ ] Add `obi.profile:crypto.aead-0` (AEAD encrypt/decrypt)

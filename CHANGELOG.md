@@ -28,6 +28,7 @@ The canonical spec version is defined in `OBI.md`.
 - Extended shared media types with basic audio/video format structs and planar YUV buffer layouts
 - Added math profiles for BigInt, BigFloat, and a BLAS subset
 - Added a websocket client profile
+- Added a TLS session profile (OpenSSL/GNUTLS/mbedTLS-style)
 - Added a crypto hash profile
 - Added a decimal arithmetic profile (mpdecimal-style)
 - Added a small scientific-ops profile (special functions, GSL-like)
