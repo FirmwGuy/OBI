@@ -15,6 +15,7 @@ This directory contains reference C headers defining the normative ABI shapes us
 Shipped profile ABIs (v0):
 
 - `profiles/obi_pump_v0.h` - `obi.profile:core.pump-0`
+- `profiles/obi_waitset_v0.h` - `obi.profile:core.waitset-0`
 - `profiles/obi_gfx_types_v0.h` - shared gfx types (window IDs)
 - `profiles/obi_geom_types_v0.h` - shared geometry types (vec/mat/color/rect)
 - `profiles/obi_gfx_window_input_v0.h` - `obi.profile:gfx.window_input-0`
@@ -29,6 +30,11 @@ Shipped profile ABIs (v0):
 - `profiles/obi_text_shape_v0.h` - `obi.profile:text.shape-0`
 - `profiles/obi_text_raster_cache_v0.h` - `obi.profile:text.raster_cache-0`
 - `profiles/obi_text_layout_v0.h` - `obi.profile:text.layout-0`
+- `profiles/obi_text_spellcheck_v0.h` - `obi.profile:text.spellcheck-0`
+- `profiles/obi_doc_inspect_v0.h` - `obi.profile:doc.inspect-0`
+- `profiles/obi_doc_text_decode_v0.h` - `obi.profile:doc.text_decode-0`
+- `profiles/obi_doc_markdown_commonmark_v0.h` - `obi.profile:doc.markdown_commonmark-0`
+- `profiles/obi_doc_paged_document_v0.h` - `obi.profile:doc.paged_document-0`
 - `profiles/obi_net_http_client_v0.h` - `obi.profile:net.http_client-0`
 - `profiles/obi_net_websocket_v0.h` - `obi.profile:net.websocket-0`
 - `profiles/obi_data_compression_v0.h` - `obi.profile:data.compression-0`

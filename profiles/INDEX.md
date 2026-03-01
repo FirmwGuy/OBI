@@ -11,6 +11,7 @@
 This index lists the profile documents currently present in this repository.
 
 - `obi.profile:core.pump-0` (Core Pump): [OBI_CorePump.md](OBI_CorePump.md)
+- `obi.profile:core.waitset-0` (Core WaitSet): [OBI_CoreWaitSet.md](OBI_CoreWaitSet.md)
 - `obi.profile:gfx.window_input-0` (Window + Input): [OBI_GfxWindowInput.md](OBI_GfxWindowInput.md)
 - `obi.profile:gfx.render2d-0` (2D Rendering): [OBI_GfxRender2D.md](OBI_GfxRender2D.md)
 - `obi.profile:gfx.gpu_device-0` (GPU Device): [OBI_GfxGPUDevice.md](OBI_GfxGPUDevice.md)
@@ -18,11 +19,16 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:phys.world2d-0` (2D Physics World): [OBI_PhysWorld2D.md](OBI_PhysWorld2D.md)
 - `obi.profile:phys.world3d-0` (3D Physics World): [OBI_PhysWorld3D.md](OBI_PhysWorld3D.md)
 - `obi.profile:phys.debug_draw-0` (Physics Debug Draw): [OBI_PhysDebugDraw.md](OBI_PhysDebugDraw.md)
+- `obi.profile:doc.inspect-0` (Document Inspect): [OBI_DocInspect.md](OBI_DocInspect.md)
+- `obi.profile:doc.text_decode-0` (Text Decode): [OBI_DocTextDecode.md](OBI_DocTextDecode.md)
+- `obi.profile:doc.markdown_commonmark-0` (Markdown Parse): [OBI_DocMarkdownCommonMark.md](OBI_DocMarkdownCommonMark.md)
+- `obi.profile:doc.paged_document-0` (Paged Documents): [OBI_DocPagedDocument.md](OBI_DocPagedDocument.md)
 - `obi.profile:text.segmenter-0` (Text Segmentation): [OBI_TextSegmenter.md](OBI_TextSegmenter.md)
 - `obi.profile:text.font_db-0` (Font Discovery): [OBI_TextFontDB.md](OBI_TextFontDB.md)
 - `obi.profile:text.shape-0` (Text Shaping): [OBI_TextShape.md](OBI_TextShape.md)
 - `obi.profile:text.raster_cache-0` (Glyph Rasterization + Cache): [OBI_TextRasterCache.md](OBI_TextRasterCache.md)
 - `obi.profile:text.layout-0` (Text Layout): [OBI_TextLayout.md](OBI_TextLayout.md)
+- `obi.profile:text.spellcheck-0` (Spellcheck): [OBI_TextSpellcheck.md](OBI_TextSpellcheck.md)
 - `obi.profile:net.http_client-0` (HTTP Client): [OBI_NetHttpClient.md](OBI_NetHttpClient.md)
 - `obi.profile:net.websocket-0` (WebSocket Client): [OBI_NetWebSocket.md](OBI_NetWebSocket.md)
 

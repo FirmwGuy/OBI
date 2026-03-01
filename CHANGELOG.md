@@ -33,6 +33,9 @@ The canonical spec version is defined in `OBI.md`.
 - Added 2D/3D physics world profiles and a physics debug draw profile
 - Added a portable GPU device profile and a minimal 3D rendering profile
 - Added shared gfx/geometry ABI headers and removed duplicate window-id typedefs between gfx profiles
+- Added a core waitset profile for OS-level waitable integration with pump-driven providers
+- Added document profiles for deep inspection, text decoding, markdown parsing, and paged document rasterization
+- Added a spellcheck profile (aspell/hunspell/enchant-style)
 
 ## [0.1.0] - 2026-03-01
 
