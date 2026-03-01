@@ -13,10 +13,12 @@ OBI Core defines the *mechanics* for integrating providers (versioning, capabili
 Profiles define the *domain surface*:
 
 - GUI: windows, input, 2D rendering
+- GPU/3D: portable GPU backends and minimal 3D rendering for tools
 - Text: shaping (bidi/harfbuzz), glyph rasterization + host-managed atlas caching
 - Networking: HTTP clients (curl/libsoup), websockets, etc.
 - Media: demux/decode/filter (ffmpeg/gstreamer), resampling
 - Data: DB handles/transactions (sqlite/lmdb), compression/archives
+- Physics: 2D/3D rigid body worlds (box2d/bullet/jolt)
 - Math: big integers/float contexts (gmp/mpfr), matrix ops (lapack)
 
 Different domains have different semantics, but most integrations fall into a few interface shapes:
@@ -46,65 +48,93 @@ Profiles exist so we can standardize *only what we need*, when we need it.
 3) **2D Render** (`obi.profile:gfx.render2d-0`)  
    Textures + scissor + rectangles + textured quads (enough to render a glyph atlas).
 
+### GPU/3D baseline (optional for 3D tools)
+
+4) **GPU Device** (`obi.profile:gfx.gpu_device-0`)  
+   Portable GPU abstraction (OpenGL/Vulkan/Metal/D3D style backends).
+
+5) **3D Render** (`obi.profile:gfx.render3d-0`)  
+   Minimal 3D rendering for tools and POCs (meshes, textures, camera, draw).
+
 ### Text baseline (recommended once you need correct Unicode)
 
-4) **Text Shape** (`obi.profile:text.shape-0`)  
+6) **Text Segmenter** (`obi.profile:text.segmenter-0`)  
+   Unicode segmentation and break opportunities (grapheme/word/line/bidi).
+
+7) **Font DB** (`obi.profile:text.font_db-0`)  
+   System font discovery and fallback (fontconfig/CoreText/DirectWrite style).
+
+8) **Text Shape** (`obi.profile:text.shape-0`)  
    FriBidi + HarfBuzz style shaping: UTF-8 in, glyph indices + positions out.
 
-5) **Text Raster Cache** (`obi.profile:text.raster_cache-0`)  
+9) **Text Raster Cache** (`obi.profile:text.raster_cache-0`)  
    Glyph rasterization + optional internal caching. Hosts typically pack glyphs into their own atlas
    using `obi.profile:gfx.render2d-0`.
 
+10) **Text Layout** (`obi.profile:text.layout-0`)  
+    Paragraph layout and positioned glyph output ("text flow") for rendering via an atlas.
+
 ### Networking baseline (needed for internet services)
 
-6) **HTTP Client** (`obi.profile:net.http_client-0`)  
+11) **HTTP Client** (`obi.profile:net.http_client-0`)  
    A request/response interface with optional async/pump integration, compatible with curl/libsoup.
 
-7) **WebSocket Client** (`obi.profile:net.websocket-0`)  
+12) **WebSocket Client** (`obi.profile:net.websocket-0`)  
    Duplex messaging (send/receive) with optional async/pump integration.
 
 ### Crypto baseline (common for integrity/content addressing)
 
-8) **Hash** (`obi.profile:crypto.hash-0`)  
+13) **Hash** (`obi.profile:crypto.hash-0`)  
    Streaming hashes (blake3/sha256/etc.) for integrity checks and content addressing.
 
 ### Data baseline (common once you ingest or ship artifacts)
 
-9) **Data Compression** (`obi.profile:data.compression-0`)  
+14) **Data Compression** (`obi.profile:data.compression-0`)  
    Streaming compression/decompression (zlib/zstd/brotli/lz4 style) via OBI readers/writers.
 
-10) **Archive Containers** (`obi.profile:data.archive-0`)  
+15) **Archive Containers** (`obi.profile:data.archive-0`)  
    Stream archive entries in/out (libarchive/libzip style).
 
-11) **File Type Detection** (`obi.profile:data.file_type-0`)  
+16) **File Type Detection** (`obi.profile:data.file_type-0`)  
     Magic/signature-based file type guessing (libmagic-style) to pick handlers before parsing.
 
 ### Media baseline (common for tools, ingestion, and playback)
 
-12) **Image Codec** (`obi.profile:media.image_codec-0`)  
+17) **Image Codec** (`obi.profile:media.image_codec-0`)  
    Decode images to CPU pixel buffers and encode pixels back out (stb_image/libpng/libjpeg/etc.).
 
-13) **Audio Device** (`obi.profile:media.audio_device-0`)  
+18) **Audio Device** (`obi.profile:media.audio_device-0`)  
     Open playback/capture streams and write/read PCM frames (SDL/PortAudio/platform backends).
 
-14) **AV Decode** (`obi.profile:media.av_decode-0`)  
+19) **AV Decode** (`obi.profile:media.av_decode-0`)  
     Minimal packet-in / frame-out decoding surface (FFmpeg/libavcodec, gstreamer wrappers).
+
+### Physics baseline (optional for simulation and games)
+
+20) **2D Physics World** (`obi.profile:phys.world2d-0`)  
+    A minimal 2D rigid-body world (Box2D/Chipmunk2D class).
+
+21) **3D Physics World** (`obi.profile:phys.world3d-0`)  
+    A minimal 3D rigid-body world (Bullet/Jolt/PhysX class).
+
+22) **Physics Debug Draw** (`obi.profile:phys.debug_draw-0`)  
+    Extract debug line/tri primitives for visualization.
 
 ### Math baseline (only when you need these semantics)
 
-15) **Big Integers** (`obi.profile:math.bigint-0`)  
+23) **Big Integers** (`obi.profile:math.bigint-0`)  
     Arbitrary precision integer values (GMP-style).
 
-16) **Big Floats** (`obi.profile:math.bigfloat-0`)  
+24) **Big Floats** (`obi.profile:math.bigfloat-0`)  
     Arbitrary precision floating-point values (MPFR-style).
 
-17) **Decimal Arithmetic** (`obi.profile:math.decimal-0`)  
+25) **Decimal Arithmetic** (`obi.profile:math.decimal-0`)  
     Base-10 decimal contexts and operations (mpdecimal-style).
 
-18) **Scientific Ops** (`obi.profile:math.scientific_ops-0`)  
+26) **Scientific Ops** (`obi.profile:math.scientific_ops-0`)  
     A small special-functions surface suitable for GSL-like providers.
 
-19) **BLAS Subset** (`obi.profile:math.blas-0`)  
+27) **BLAS Subset** (`obi.profile:math.blas-0`)  
     A small BLAS surface (GEMM) for swapping matrix backends (OpenBLAS/MKL/etc.).
 
 ---

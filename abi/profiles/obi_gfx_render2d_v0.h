@@ -5,6 +5,8 @@
 #define OBI_PROFILE_GFX_RENDER2D_V0_H
 
 #include "../obi_core_v0.h"
+#include "obi_gfx_types_v0.h"
+#include "obi_geom_types_v0.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -18,30 +20,6 @@ enum {
     /* Provider supports begin_frame/end_frame with an OBI window id. */
     OBI_RENDER2D_CAP_WINDOW_TARGET = 1ull << 2,
 };
-
-/* Window IDs come from the gfx.window_input profile. Repeated here to avoid a hard include edge
- * between profiles.
- */
-typedef uint64_t obi_window_id_v0;
-
-typedef struct obi_vec2f_v0 {
-    float x;
-    float y;
-} obi_vec2f_v0;
-
-typedef struct obi_rectf_v0 {
-    float x;
-    float y;
-    float w;
-    float h;
-} obi_rectf_v0;
-
-typedef struct obi_color_rgba8_v0 {
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-    uint8_t a;
-} obi_color_rgba8_v0;
 
 typedef enum obi_blend_mode_v0 {
     OBI_BLEND_ALPHA = 0,

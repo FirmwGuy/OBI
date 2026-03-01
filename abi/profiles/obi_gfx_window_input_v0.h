@@ -5,6 +5,7 @@
 #define OBI_PROFILE_GFX_WINDOW_INPUT_V0_H
 
 #include "../obi_core_v0.h"
+#include "obi_gfx_types_v0.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -20,8 +21,6 @@ enum {
     /* Provider supports start_text_input / stop_text_input. */
     OBI_WINDOW_CAP_TEXT_INPUT       = 1ull << 2,
 };
-
-typedef uint64_t obi_window_id_v0;
 
 enum {
     OBI_WINDOW_CREATE_RESIZABLE   = 1u << 0,
@@ -191,4 +190,3 @@ struct obi_window_input_v0 {
 #endif
 
 #endif /* OBI_PROFILE_GFX_WINDOW_INPUT_V0_H */
-

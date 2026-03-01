@@ -29,6 +29,10 @@ The canonical spec version is defined in `OBI.md`.
 - Added a decimal arithmetic profile (mpdecimal-style)
 - Added a small scientific-ops profile (special functions, GSL-like)
 - Added a file type detection profile (libmagic-style)
+- Added text segmentation, font DB, and text layout profiles
+- Added 2D/3D physics world profiles and a physics debug draw profile
+- Added a portable GPU device profile and a minimal 3D rendering profile
+- Added shared gfx/geometry ABI headers and removed duplicate window-id typedefs between gfx profiles
 
 ## [0.1.0] - 2026-03-01
 
