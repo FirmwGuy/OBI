@@ -49,6 +49,7 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:data.archive-0` (Archive Containers): [OBI_DataArchive.md](OBI_DataArchive.md)
 - `obi.profile:data.file_type-0` (File Type Detection): [OBI_DataFileType.md](OBI_DataFileType.md)
 - `obi.profile:data.serde_events-0` (Serde Events): [OBI_DataSerdeEvents.md](OBI_DataSerdeEvents.md)
+- `obi.profile:data.serde_emit-0` (Serde Emit): [OBI_DataSerdeEmit.md](OBI_DataSerdeEmit.md)
 
 - `obi.profile:db.kv-0` (KV Database): [OBI_DbKV.md](OBI_DbKV.md)
 - `obi.profile:db.sql-0` (SQL Database): [OBI_DbSQL.md](OBI_DbSQL.md)

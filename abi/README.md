@@ -55,6 +55,7 @@ Shipped profile ABIs (v0):
 - `profiles/obi_data_archive_v0.h` - `obi.profile:data.archive-0`
 - `profiles/obi_data_file_type_v0.h` - `obi.profile:data.file_type-0`
 - `profiles/obi_data_serde_events_v0.h` - `obi.profile:data.serde_events-0`
+- `profiles/obi_data_serde_emit_v0.h` - `obi.profile:data.serde_emit-0`
 - `profiles/obi_db_kv_v0.h` - `obi.profile:db.kv-0`
 - `profiles/obi_db_sql_v0.h` - `obi.profile:db.sql-0`
 - `profiles/obi_crypto_random_v0.h` - `obi.profile:crypto.random-0`

@@ -164,6 +164,9 @@ the profiles they need.
 26b) **Serde Events** (`obi.profile:data.serde_events-0`)  
     Event-based parsing for JSON/YAML/TOML-style formats (maps/sequences/scalars).
 
+26c) **Serde Emit** (`obi.profile:data.serde_emit-0`)  
+    Event-based emission for JSON/YAML/TOML-style formats (stream events to an `obi_writer_v0`).
+
 ### Document baseline (optional for content ingestion and open standards)
 
 27) **Document Inspect** (`obi.profile:doc.inspect-0`)  
