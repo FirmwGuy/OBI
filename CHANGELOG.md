@@ -21,6 +21,9 @@ The canonical spec version is defined in `OBI.md`.
 - Added normative ABI headers for window/input and text profiles
 - Expanded `net.http_client` profile with extended request entrypoints (`request_ex`)
 - Extended `gfx.render2d` ABI with optional `begin_frame/end_frame` window targeting
+- Added data profiles for compression and archive containers
+- Added media profiles for image codecs, audio device I/O, and A/V decoding
+- Added math profiles for BigInt, BigFloat, and a BLAS subset
 
 ## [0.1.0] - 2026-03-01
 

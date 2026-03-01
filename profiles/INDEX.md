@@ -17,3 +17,13 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:text.raster_cache-0` (Glyph Rasterization + Cache): [OBI_TextRasterCache.md](OBI_TextRasterCache.md)
 - `obi.profile:net.http_client-0` (HTTP Client): [OBI_NetHttpClient.md](OBI_NetHttpClient.md)
 
+- `obi.profile:data.compression-0` (Data Compression): [OBI_DataCompression.md](OBI_DataCompression.md)
+- `obi.profile:data.archive-0` (Archive Containers): [OBI_DataArchive.md](OBI_DataArchive.md)
+
+- `obi.profile:math.bigint-0` (Big Integers): [OBI_MathBigInt.md](OBI_MathBigInt.md)
+- `obi.profile:math.bigfloat-0` (Big Floats): [OBI_MathBigFloat.md](OBI_MathBigFloat.md)
+- `obi.profile:math.blas-0` (BLAS Subset): [OBI_MathBLAS.md](OBI_MathBLAS.md)
+
+- `obi.profile:media.image_codec-0` (Image Decode/Encode): [OBI_MediaImageCodec.md](OBI_MediaImageCodec.md)
+- `obi.profile:media.audio_device-0` (Audio Device I/O): [OBI_MediaAudioDevice.md](OBI_MediaAudioDevice.md)
+- `obi.profile:media.av_decode-0` (Audio/Video Decode): [OBI_MediaAVDecode.md](OBI_MediaAVDecode.md)

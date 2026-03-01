@@ -177,6 +177,31 @@ struct obi_reader_v0 {
     void* ctx;
 };
 
+/* Minimal writer interface for streaming bytes across profile boundaries. */
+typedef struct obi_writer_v0 obi_writer_v0;
+
+typedef struct obi_writer_api_v0 {
+    uint32_t abi_major;
+    uint32_t abi_minor;
+    uint32_t struct_size;
+    uint32_t reserved;
+    uint64_t caps;
+
+    /* Write up to src_size bytes from src. Returns OK and sets out_n (may be < src_size). */
+    obi_status (*write)(void* ctx, const void* src, size_t src_size, size_t* out_n);
+
+    /* Optional flush (NULL if unsupported). */
+    obi_status (*flush)(void* ctx);
+
+    /* Destroy the writer and its context. Must be safe to call with ctx==NULL. */
+    void (*destroy)(void* ctx);
+} obi_writer_api_v0;
+
+struct obi_writer_v0 {
+    const obi_writer_api_v0* api;
+    void* ctx;
+};
+
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
