@@ -42,6 +42,7 @@ The canonical spec version is defined in `OBI.md`.
 - Added core cancellation token support and a cancel-source profile
 - Added an OS filesystem profile (open/read/write/stat/mkdir/remove/rename, optional directory iteration)
 - Added an OS environment profile (env vars, cwd, portable known directories)
+- Added an OS process profile (spawn, wait, optional stdio pipes and env/cwd overrides)
 - Added an OS filesystem watch profile (inotify/FSEvents/ReadDirectoryChangesW-style)
 - Added document profiles for deep inspection, text decoding, markdown parsing, and paged document rasterization
 - Added event-based parser profiles for markup (XML/HTML), markdown, and structured data (JSON/YAML/TOML)

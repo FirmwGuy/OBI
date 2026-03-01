@@ -66,6 +66,10 @@ the profiles they need.
    Read environment variables and query portable known directories (home/temp/config/cache/data),
    optionally set/unset variables and change the working directory.
 
+3d) **Process** (`obi.profile:os.process-0`)  
+   Spawn and supervise external processes with optional stdio pipes (toolchains, build steps,
+   media pipelines).
+
 ### GUI baseline (common for tools and POCs)
 
 4) **Window + Input** (`obi.profile:gfx.window_input-0`)  
