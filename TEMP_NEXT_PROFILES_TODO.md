@@ -40,4 +40,4 @@ and wired into indices, delete this file.
 - [x] Add `obi.profile:crypto.sign-0` (sign/verify)
 - [x] Add `obi.profile:crypto.kdf-0` (HKDF/Argon2/etc via caps)
 
-- [ ] Add `obi.profile:os.fs_watch-0` (inotify/FSEvents/ReadDirectoryChangesW)
+- [x] Add `obi.profile:os.fs_watch-0` (inotify/FSEvents/ReadDirectoryChangesW)

@@ -12,6 +12,7 @@ This index lists the profile documents currently present in this repository.
 
 - `obi.profile:core.pump-0` (Core Pump): [OBI_CorePump.md](OBI_CorePump.md)
 - `obi.profile:core.waitset-0` (Core WaitSet): [OBI_CoreWaitSet.md](OBI_CoreWaitSet.md)
+- `obi.profile:os.fs_watch-0` (Filesystem Watch): [OBI_OsFSWatch.md](OBI_OsFSWatch.md)
 - `obi.profile:gfx.window_input-0` (Window + Input): [OBI_GfxWindowInput.md](OBI_GfxWindowInput.md)
 - `obi.profile:gfx.render2d-0` (2D Rendering): [OBI_GfxRender2D.md](OBI_GfxRender2D.md)
 - `obi.profile:gfx.gpu_device-0` (GPU Device): [OBI_GfxGPUDevice.md](OBI_GfxGPUDevice.md)
