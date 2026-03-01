@@ -26,6 +26,9 @@ The canonical spec version is defined in `OBI.md`.
 - Added math profiles for BigInt, BigFloat, and a BLAS subset
 - Added a websocket client profile
 - Added a crypto hash profile
+- Added a decimal arithmetic profile (mpdecimal-style)
+- Added a small scientific-ops profile (special functions, GSL-like)
+- Added a file type detection profile (libmagic-style)
 
 ## [0.1.0] - 2026-03-01
 

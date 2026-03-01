@@ -76,26 +76,35 @@ Profiles exist so we can standardize *only what we need*, when we need it.
 10) **Archive Containers** (`obi.profile:data.archive-0`)  
    Stream archive entries in/out (libarchive/libzip style).
 
+11) **File Type Detection** (`obi.profile:data.file_type-0`)  
+    Magic/signature-based file type guessing (libmagic-style) to pick handlers before parsing.
+
 ### Media baseline (common for tools, ingestion, and playback)
 
-11) **Image Codec** (`obi.profile:media.image_codec-0`)  
+12) **Image Codec** (`obi.profile:media.image_codec-0`)  
    Decode images to CPU pixel buffers and encode pixels back out (stb_image/libpng/libjpeg/etc.).
 
-12) **Audio Device** (`obi.profile:media.audio_device-0`)  
+13) **Audio Device** (`obi.profile:media.audio_device-0`)  
     Open playback/capture streams and write/read PCM frames (SDL/PortAudio/platform backends).
 
-13) **AV Decode** (`obi.profile:media.av_decode-0`)  
+14) **AV Decode** (`obi.profile:media.av_decode-0`)  
     Minimal packet-in / frame-out decoding surface (FFmpeg/libavcodec, gstreamer wrappers).
 
 ### Math baseline (only when you need these semantics)
 
-14) **Big Integers** (`obi.profile:math.bigint-0`)  
+15) **Big Integers** (`obi.profile:math.bigint-0`)  
     Arbitrary precision integer values (GMP-style).
 
-15) **Big Floats** (`obi.profile:math.bigfloat-0`)  
+16) **Big Floats** (`obi.profile:math.bigfloat-0`)  
     Arbitrary precision floating-point values (MPFR-style).
 
-16) **BLAS Subset** (`obi.profile:math.blas-0`)  
+17) **Decimal Arithmetic** (`obi.profile:math.decimal-0`)  
+    Base-10 decimal contexts and operations (mpdecimal-style).
+
+18) **Scientific Ops** (`obi.profile:math.scientific_ops-0`)  
+    A small special-functions surface suitable for GSL-like providers.
+
+19) **BLAS Subset** (`obi.profile:math.blas-0`)  
     A small BLAS surface (GEMM) for swapping matrix backends (OpenBLAS/MKL/etc.).
 
 ---

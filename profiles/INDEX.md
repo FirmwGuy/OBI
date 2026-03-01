@@ -20,11 +20,14 @@ This index lists the profile documents currently present in this repository.
 
 - `obi.profile:data.compression-0` (Data Compression): [OBI_DataCompression.md](OBI_DataCompression.md)
 - `obi.profile:data.archive-0` (Archive Containers): [OBI_DataArchive.md](OBI_DataArchive.md)
+- `obi.profile:data.file_type-0` (File Type Detection): [OBI_DataFileType.md](OBI_DataFileType.md)
 
 - `obi.profile:crypto.hash-0` (Hash): [OBI_CryptoHash.md](OBI_CryptoHash.md)
 
 - `obi.profile:math.bigint-0` (Big Integers): [OBI_MathBigInt.md](OBI_MathBigInt.md)
 - `obi.profile:math.bigfloat-0` (Big Floats): [OBI_MathBigFloat.md](OBI_MathBigFloat.md)
+- `obi.profile:math.decimal-0` (Decimal Arithmetic): [OBI_MathDecimal.md](OBI_MathDecimal.md)
+- `obi.profile:math.scientific_ops-0` (Scientific Ops): [OBI_MathScientificOps.md](OBI_MathScientificOps.md)
 - `obi.profile:math.blas-0` (BLAS Subset): [OBI_MathBLAS.md](OBI_MathBLAS.md)
 
 - `obi.profile:media.image_codec-0` (Image Decode/Encode): [OBI_MediaImageCodec.md](OBI_MediaImageCodec.md)
