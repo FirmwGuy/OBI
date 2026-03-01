@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: CC-BY-SA-4.0 */
+/* SPDX-License-Identifier: MPL-2.0 */
 /* SPDX-FileCopyrightText: © 2026–present Victor M. Barrientos <firmw.guy@gmail.com> */
 
 #ifndef OBI_PROFILE_CRYPTO_SIGN_V0_H

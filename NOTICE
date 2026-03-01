@@ -1,0 +1,7 @@
+OBI is a multi-license repository:
+
+- Specification documents (Markdown under the repo root and `profiles/`) are licensed under
+  CC BY-SA 4.0 (see `LICENSE`).
+- ABI headers under `abi/` are licensed under MPL-2.0 (see `LICENSE_MPL-2.0`). These headers are
+  mirrored from the canonical `OBI-ABI` repository and should be treated as read-only here.
+

@@ -22,6 +22,12 @@ OBI is the *backstage* contract: imperative, handle-based, capability-negotiated
 modules that need to swap implementations at runtime (SDL vs raylib, curl vs libsoup, ffmpeg vs
 gstreamer, etc.).
 
+### Related Repositories
+
+- `OBI-ABI`: canonical C ABI headers for OBI core and profile vtables.
+- `libobi`: reference runtime/loader implementation that consumes OBI-ABI headers and loads
+  providers at runtime.
+
 ### Start Here
 
 - `OBI.md` - OBI Core specification (v0.1.0 draft)

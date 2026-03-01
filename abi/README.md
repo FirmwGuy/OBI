@@ -12,6 +12,12 @@ This directory contains reference C headers defining the normative ABI shapes us
 - `obi_core_v0.h` - core types (status codes, host/provider shape, stream helpers)
 - `profiles/` - per-profile handle structs, vtables, and capability bits
 
+Canonical source:
+
+- These headers are mirrored from the `OBI-ABI` repository and should be treated as read-only in
+  this repo.
+- `OBI-ABI` is the canonical, compile-against header set used by `libobi` and providers.
+
 Shipped profile ABIs (v0):
 
 - `profiles/obi_pump_v0.h` - `obi.profile:core.pump-0`

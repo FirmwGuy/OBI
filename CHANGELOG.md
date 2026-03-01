@@ -53,6 +53,7 @@ The canonical spec version is defined in `OBI.md`.
 - Added an event-based structured data emitter profile (JSON/YAML/TOML output)
 - Added a spellcheck profile (aspell/hunspell/enchant-style)
 - Added asset import profiles for meshes and scenes (OBJ/glTF/assimp-style integrations)
+- Added tooling to keep mirrored ABI headers in sync with the canonical `OBI-ABI` repository
 
 ## [0.1.0] - 2026-03-01
 
