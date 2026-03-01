@@ -16,6 +16,7 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:os.fs-0` (Filesystem): [OBI_OsFS.md](OBI_OsFS.md)
 - `obi.profile:os.env-0` (Environment): [OBI_OsEnv.md](OBI_OsEnv.md)
 - `obi.profile:os.process-0` (Process): [OBI_OsProcess.md](OBI_OsProcess.md)
+- `obi.profile:os.dylib-0` (Dynamic Libraries): [OBI_OsDylib.md](OBI_OsDylib.md)
 - `obi.profile:os.fs_watch-0` (Filesystem Watch): [OBI_OsFSWatch.md](OBI_OsFSWatch.md)
 - `obi.profile:gfx.window_input-0` (Window + Input): [OBI_GfxWindowInput.md](OBI_GfxWindowInput.md)
 - `obi.profile:gfx.render2d-0` (2D Rendering): [OBI_GfxRender2D.md](OBI_GfxRender2D.md)

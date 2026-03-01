@@ -70,6 +70,9 @@ the profiles they need.
    Spawn and supervise external processes with optional stdio pipes (toolchains, build steps,
    media pipelines).
 
+3e) **Dynamic Libraries** (`obi.profile:os.dylib-0`)  
+   Load shared libraries and lookup symbols (plugin/provider discovery).
+
 ### GUI baseline (common for tools and POCs)
 
 4) **Window + Input** (`obi.profile:gfx.window_input-0`)  
