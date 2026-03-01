@@ -185,6 +185,14 @@ This repository includes reference C headers under `abi/`:
 - They are normative for field layouts and profile IDs.
 - They are not a full SDK and do not include implementations.
 
+Companion documents in this repository:
+
+- `OBI_Profiles.md` (recommended baseline profile set)
+- `OBI_FAQ.md` (FAQ and common clarifications)
+- `OBI_PROVIDER_GUIDE.md` (provider authoring and hosting guidance)
+- `OBI_ABI_CONVENTIONS.md` (stable ABI rules and patterns)
+- `OBI_CONFORMANCE.md` (host/provider conformance checklists)
+
 ---
 
 ## Global Q&A
@@ -200,4 +208,3 @@ No. OBI defines stable integration mechanics and only adds domain profiles when 
 OBI does not make external effects deterministic by itself. CEP (or another host) must decide when
 effects are allowed and how to record/replay them. OBI profiles must make it *possible* to capture
 inputs/outputs in stable forms (bytes/streams/hashes) when determinism is required.
-
