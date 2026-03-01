@@ -62,6 +62,10 @@ the profiles they need.
    Open files for streaming reads/writes, stat paths, create/remove/rename, and optionally iterate
    directories.
 
+3c) **Environment** (`obi.profile:os.env-0`)  
+   Read environment variables and query portable known directories (home/temp/config/cache/data),
+   optionally set/unset variables and change the working directory.
+
 ### GUI baseline (common for tools and POCs)
 
 4) **Window + Input** (`obi.profile:gfx.window_input-0`)  

@@ -18,6 +18,7 @@ Shipped profile ABIs (v0):
 - `profiles/obi_waitset_v0.h` - `obi.profile:core.waitset-0`
 - `profiles/obi_cancel_v0.h` - `obi.profile:core.cancel-0`
 - `profiles/obi_os_fs_v0.h` - `obi.profile:os.fs-0`
+- `profiles/obi_os_env_v0.h` - `obi.profile:os.env-0`
 - `profiles/obi_os_fs_watch_v0.h` - `obi.profile:os.fs_watch-0`
 - `profiles/obi_gfx_types_v0.h` - shared gfx types (window IDs)
 - `profiles/obi_geom_types_v0.h` - shared geometry types (vec/mat/color/rect)
