@@ -41,6 +41,7 @@ The canonical spec version is defined in `OBI.md`.
 - Added a core waitset profile for OS-level waitable integration with pump-driven providers
 - Added an OS filesystem watch profile (inotify/FSEvents/ReadDirectoryChangesW-style)
 - Added document profiles for deep inspection, text decoding, markdown parsing, and paged document rasterization
+- Added event-based parser profiles for markup (XML/HTML), markdown, and structured data (JSON/YAML/TOML)
 - Added a spellcheck profile (aspell/hunspell/enchant-style)
 - Added asset import profiles for meshes and scenes (OBJ/glTF/assimp-style integrations)
 

@@ -22,7 +22,9 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:phys.debug_draw-0` (Physics Debug Draw): [OBI_PhysDebugDraw.md](OBI_PhysDebugDraw.md)
 - `obi.profile:doc.inspect-0` (Document Inspect): [OBI_DocInspect.md](OBI_DocInspect.md)
 - `obi.profile:doc.text_decode-0` (Text Decode): [OBI_DocTextDecode.md](OBI_DocTextDecode.md)
+- `obi.profile:doc.markup_events-0` (Markup Events): [OBI_DocMarkupEvents.md](OBI_DocMarkupEvents.md)
 - `obi.profile:doc.markdown_commonmark-0` (Markdown Parse): [OBI_DocMarkdownCommonMark.md](OBI_DocMarkdownCommonMark.md)
+- `obi.profile:doc.markdown_events-0` (Markdown Events): [OBI_DocMarkdownEvents.md](OBI_DocMarkdownEvents.md)
 - `obi.profile:doc.paged_document-0` (Paged Documents): [OBI_DocPagedDocument.md](OBI_DocPagedDocument.md)
 - `obi.profile:asset.mesh_io-0` (Mesh Import): [OBI_AssetMeshIO.md](OBI_AssetMeshIO.md)
 - `obi.profile:asset.scene_io-0` (Scene Import): [OBI_AssetSceneIO.md](OBI_AssetSceneIO.md)
@@ -39,6 +41,7 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:data.compression-0` (Data Compression): [OBI_DataCompression.md](OBI_DataCompression.md)
 - `obi.profile:data.archive-0` (Archive Containers): [OBI_DataArchive.md](OBI_DataArchive.md)
 - `obi.profile:data.file_type-0` (File Type Detection): [OBI_DataFileType.md](OBI_DataFileType.md)
+- `obi.profile:data.serde_events-0` (Serde Events): [OBI_DataSerdeEvents.md](OBI_DataSerdeEvents.md)
 
 - `obi.profile:db.kv-0` (KV Database): [OBI_DbKV.md](OBI_DbKV.md)
 - `obi.profile:db.sql-0` (SQL Database): [OBI_DbSQL.md](OBI_DbSQL.md)

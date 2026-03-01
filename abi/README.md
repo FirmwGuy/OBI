@@ -34,7 +34,9 @@ Shipped profile ABIs (v0):
 - `profiles/obi_text_spellcheck_v0.h` - `obi.profile:text.spellcheck-0`
 - `profiles/obi_doc_inspect_v0.h` - `obi.profile:doc.inspect-0`
 - `profiles/obi_doc_text_decode_v0.h` - `obi.profile:doc.text_decode-0`
+- `profiles/obi_doc_markup_events_v0.h` - `obi.profile:doc.markup_events-0`
 - `profiles/obi_doc_markdown_commonmark_v0.h` - `obi.profile:doc.markdown_commonmark-0`
+- `profiles/obi_doc_markdown_events_v0.h` - `obi.profile:doc.markdown_events-0`
 - `profiles/obi_doc_paged_document_v0.h` - `obi.profile:doc.paged_document-0`
 - `profiles/obi_asset_mesh_io_v0.h` - `obi.profile:asset.mesh_io-0`
 - `profiles/obi_asset_scene_io_v0.h` - `obi.profile:asset.scene_io-0`
@@ -44,6 +46,7 @@ Shipped profile ABIs (v0):
 - `profiles/obi_data_compression_v0.h` - `obi.profile:data.compression-0`
 - `profiles/obi_data_archive_v0.h` - `obi.profile:data.archive-0`
 - `profiles/obi_data_file_type_v0.h` - `obi.profile:data.file_type-0`
+- `profiles/obi_data_serde_events_v0.h` - `obi.profile:data.serde_events-0`
 - `profiles/obi_db_kv_v0.h` - `obi.profile:db.kv-0`
 - `profiles/obi_db_sql_v0.h` - `obi.profile:db.sql-0`
 - `profiles/obi_crypto_random_v0.h` - `obi.profile:crypto.random-0`

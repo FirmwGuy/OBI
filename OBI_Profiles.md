@@ -15,12 +15,12 @@ Profiles define the *domain surface*:
 - GUI: windows, input, 2D rendering
 - GPU/3D: portable GPU backends and minimal 3D rendering for tools
 - Text: shaping (bidi/harfbuzz), glyph rasterization + host-managed atlas caching
-- Documents: inspection, decoding, markdown/PDF and other open standards
+- Documents: inspection, decoding, markdown, XML/HTML markup, PDF and other open standards
 - Assets: mesh/scene import/export (OBJ/glTF/etc.)
 - Networking: HTTP clients (curl/libsoup), websockets, etc.
 - Crypto: hashes, CSPRNG, AEAD, signatures, and KDFs
 - Media: demux/decode/filter (ffmpeg/gstreamer), resampling
-- Data: DB handles/transactions (sqlite/lmdb), compression/archives
+- Data: DB handles/transactions (sqlite/lmdb), compression/archives, JSON/YAML/TOML parsing
 - OS: filesystem watching and other platform services
 - Physics: 2D/3D rigid body worlds (box2d/bullet/jolt)
 - Math: big integers/float contexts (gmp/mpfr), matrix ops (lapack)
@@ -137,6 +137,9 @@ the profiles they need.
 26) **File Type Detection** (`obi.profile:data.file_type-0`)  
     Magic/signature-based file type guessing (libmagic-style) to pick handlers before parsing.
 
+26b) **Serde Events** (`obi.profile:data.serde_events-0`)  
+    Event-based parsing for JSON/YAML/TOML-style formats (maps/sequences/scalars).
+
 ### Document baseline (optional for content ingestion and open standards)
 
 27) **Document Inspect** (`obi.profile:doc.inspect-0`)  
@@ -145,8 +148,14 @@ the profiles they need.
 28) **Text Decode** (`obi.profile:doc.text_decode-0`)  
     Decode arbitrary bytes/readers into UTF-8 (iconv/ICU style).
 
+28b) **Markup Events** (`obi.profile:doc.markup_events-0`)  
+    Event-based parsing for XML/HTML-like markup (tags + attributes + text).
+
 29) **Markdown Parse** (`obi.profile:doc.markdown_commonmark-0`)  
     Parse markdown to a structured representation (JSON baseline).
+
+29b) **Markdown Events** (`obi.profile:doc.markdown_events-0`)  
+    Event-based markdown parsing for hosts that want to build their own AST/renderer.
 
 30) **Paged Documents** (`obi.profile:doc.paged_document-0`)  
     Open and rasterize PDF/SVG-like paged docs; optional text extraction.
@@ -225,6 +234,9 @@ Providers often implement multiple profiles:
 - `provider:openssl` => tls + hash + aead + sign + kdf
 - `provider:sqlite` => db.sql
 - `provider:ffmpeg` => demux + av_decode + video_scale_convert + mux + audio_resample
+- `provider:libxml2` => markup_events
+- `provider:simdjson` => serde_events
+- `provider:cmark` => markdown_commonmark + markdown_events
 
 The host selects providers per profile at runtime (CLI flags, config, policy), and then higher layers
 build systems (GUI, ingestion, media pipelines) on top.
