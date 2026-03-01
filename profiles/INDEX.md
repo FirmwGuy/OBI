@@ -38,6 +38,9 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:data.archive-0` (Archive Containers): [OBI_DataArchive.md](OBI_DataArchive.md)
 - `obi.profile:data.file_type-0` (File Type Detection): [OBI_DataFileType.md](OBI_DataFileType.md)
 
+- `obi.profile:db.kv-0` (KV Database): [OBI_DbKV.md](OBI_DbKV.md)
+- `obi.profile:db.sql-0` (SQL Database): [OBI_DbSQL.md](OBI_DbSQL.md)
+
 - `obi.profile:crypto.hash-0` (Hash): [OBI_CryptoHash.md](OBI_CryptoHash.md)
 
 - `obi.profile:math.bigint-0` (Big Integers): [OBI_MathBigInt.md](OBI_MathBigInt.md)

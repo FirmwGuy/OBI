@@ -30,8 +30,8 @@ and wired into indices, delete this file.
 - [x] Add `obi.profile:media.audio_resample-0` (soxr/libsamplerate/swresample class)
 - [x] Add `obi.profile:media.video_scale_convert-0` (swscale/libyuv class)
 
-- [ ] Add `obi.profile:db.kv-0` (LMDB/RocksDB transactional KV)
-- [ ] Add `obi.profile:db.sql-0` (SQLite-style prepare/bind/step/column)
+- [x] Add `obi.profile:db.kv-0` (LMDB/RocksDB transactional KV)
+- [x] Add `obi.profile:db.sql-0` (SQLite-style prepare/bind/step/column)
 
 - [ ] Add `obi.profile:net.tls-0` (OpenSSL/GNUTLS/mbedTLS session/certs/ALPN)
 
