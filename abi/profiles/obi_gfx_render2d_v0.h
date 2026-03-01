@@ -15,7 +15,14 @@ extern "C" {
 enum {
     OBI_RENDER2D_CAP_SCISSOR = 1ull << 0,
     OBI_RENDER2D_CAP_TEXTURE_RGBA8 = 1ull << 1,
+    /* Provider supports begin_frame/end_frame with an OBI window id. */
+    OBI_RENDER2D_CAP_WINDOW_TARGET = 1ull << 2,
 };
+
+/* Window IDs come from the gfx.window_input profile. Repeated here to avoid a hard include edge
+ * between profiles.
+ */
+typedef uint64_t obi_window_id_v0;
 
 typedef struct obi_vec2f_v0 {
     float x;
@@ -90,6 +97,14 @@ typedef struct obi_render2d_api_v0 {
                                     obi_rectf_v0 dst,
                                     obi_rectf_v0 uv,
                                     obi_color_rgba8_v0 tint);
+
+    /* Optional: begin/end a frame targeting a specific window. When implemented, hosts should:
+     * - call begin_frame(window)
+     * - issue draw calls
+     * - call end_frame(window) to present
+     */
+    obi_status (*begin_frame)(void* ctx, obi_window_id_v0 window);
+    obi_status (*end_frame)(void* ctx, obi_window_id_v0 window);
 } obi_render2d_api_v0;
 
 struct obi_render2d_v0 {
@@ -102,4 +117,3 @@ struct obi_render2d_v0 {
 #endif
 
 #endif /* OBI_PROFILE_GFX_RENDER2D_V0_H */
-
