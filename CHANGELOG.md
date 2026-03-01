@@ -30,6 +30,7 @@ The canonical spec version is defined in `OBI.md`.
 - Added a websocket client profile
 - Added a TLS session profile (OpenSSL/GNUTLS/mbedTLS-style)
 - Added a crypto hash profile
+- Added crypto profiles for CSPRNG, AEAD encryption, signing, and KDFs
 - Added a decimal arithmetic profile (mpdecimal-style)
 - Added a small scientific-ops profile (special functions, GSL-like)
 - Added a file type detection profile (libmagic-style)

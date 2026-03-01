@@ -42,7 +42,11 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:db.kv-0` (KV Database): [OBI_DbKV.md](OBI_DbKV.md)
 - `obi.profile:db.sql-0` (SQL Database): [OBI_DbSQL.md](OBI_DbSQL.md)
 
+- `obi.profile:crypto.random-0` (Random Bytes): [OBI_CryptoRandom.md](OBI_CryptoRandom.md)
 - `obi.profile:crypto.hash-0` (Hash): [OBI_CryptoHash.md](OBI_CryptoHash.md)
+- `obi.profile:crypto.aead-0` (AEAD): [OBI_CryptoAEAD.md](OBI_CryptoAEAD.md)
+- `obi.profile:crypto.sign-0` (Signatures): [OBI_CryptoSign.md](OBI_CryptoSign.md)
+- `obi.profile:crypto.kdf-0` (KDF): [OBI_CryptoKDF.md](OBI_CryptoKDF.md)
 
 - `obi.profile:math.bigint-0` (Big Integers): [OBI_MathBigInt.md](OBI_MathBigInt.md)
 - `obi.profile:math.bigfloat-0` (Big Floats): [OBI_MathBigFloat.md](OBI_MathBigFloat.md)

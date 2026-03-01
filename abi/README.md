@@ -45,7 +45,11 @@ Shipped profile ABIs (v0):
 - `profiles/obi_data_file_type_v0.h` - `obi.profile:data.file_type-0`
 - `profiles/obi_db_kv_v0.h` - `obi.profile:db.kv-0`
 - `profiles/obi_db_sql_v0.h` - `obi.profile:db.sql-0`
+- `profiles/obi_crypto_random_v0.h` - `obi.profile:crypto.random-0`
 - `profiles/obi_crypto_hash_v0.h` - `obi.profile:crypto.hash-0`
+- `profiles/obi_crypto_aead_v0.h` - `obi.profile:crypto.aead-0`
+- `profiles/obi_crypto_sign_v0.h` - `obi.profile:crypto.sign-0`
+- `profiles/obi_crypto_kdf_v0.h` - `obi.profile:crypto.kdf-0`
 - `profiles/obi_math_bigint_v0.h` - `obi.profile:math.bigint-0`
 - `profiles/obi_math_bigfloat_v0.h` - `obi.profile:math.bigfloat-0`
 - `profiles/obi_math_decimal_v0.h` - `obi.profile:math.decimal-0`
