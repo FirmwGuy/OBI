@@ -93,9 +93,20 @@ In practice, hosts select providers by:
 - choosing which provider modules to ship/load, and
 - applying a selection policy (preferred/denied/bindings).
 
-For automation, providers should implement `describe_json` metadata including effective license
-information for the provider module and its key dependencies. See `OBI_PROVIDER_GUIDE.md` section
-2.7 for recommended fields and coarse `license_class` buckets.
+For automation, providers should expose legal metadata that separates:
+
+- the provider module license,
+- the effective selectable license,
+- dependency closure,
+- route-specific legal facts,
+- copyleft severity,
+- and patent posture.
+
+Hosts and runtimes should treat preset selectability as a feasibility question over the requested
+profile set on the current machine: a preset is selectable only if each requested profile/route has
+at least one satisfying provider path available now.
+
+See `OBI_PROVIDER_GUIDE.md` section 2.7 and `OBI_LEGAL_SELECTION.md`.
 
 **Q: How should providers report errors, warnings, and debug information without hijacking stderr/stdout?**  
 Use `obi_status` as the primary result, then supplement it with host-directed diagnostics:

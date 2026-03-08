@@ -3,7 +3,7 @@
 
 **Document Type:** Changelog  
 **Status:** Draft  
-**Last Updated:** 2026-03-07
+**Last Updated:** 2026-03-08
 
 ---
 
@@ -16,6 +16,8 @@ The canonical spec version is defined in `OBI.md`.
 ### Added
 
 - Added FAQ and provider guidance docs (`OBI_FAQ.md`, `OBI_PROVIDER_GUIDE.md`)
+- Added legal-selection guidance doc (`OBI_LEGAL_SELECTION.md`) covering module-vs-effective
+  license, dependency closure, route-sensitive backends, and preset selectability rules
 - Added ABI conventions and conformance guidance docs
 - Added a profile inventory index (`profiles/INDEX.md`)
 - Added normative ABI headers for window/input and text profiles
@@ -57,6 +59,9 @@ The canonical spec version is defined in `OBI.md`.
 
 ### Changed
 
+- Expanded provider metadata guidance to separate copyleft severity from patent posture and to
+  standardize provider-wide vs route-specific legal facts for hosts/runtimes that need legal
+  selection plans
 - Clarified that `obi_window_id_v0` is a provider-instance-local handle by default across
   `gfx.window_input-0`, `gfx.gpu_device-0`, and `gfx.render3d-0`; cross-provider window-handle
   interop now requires an explicit future contract or provider-documented bridge.

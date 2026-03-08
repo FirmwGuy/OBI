@@ -100,38 +100,58 @@ prefer it for structured diagnostics. When only `log` is available, providers MA
 human-readable text there. If neither callback is present, providers should remain silent except for
 return values and documented profile-specific error views.
 
-### 2.7 Provider metadata (`describe_json`) and licensing
+### 2.7 Provider metadata (`describe_json` / `describe_legal_metadata`) and legal selection
 
 Providers MAY implement `obi_provider_api_v0.describe_json` to return tool-friendly metadata as a
 JSON object string.
+
+Providers that expect to participate in host/runtime legal policy SHOULD also implement the
+structured callback `obi_provider_api_v0.describe_legal_metadata`, whose canonical shapes live in
+`OBI-ABI/include/obi/obi_legal_v0.h`.
 
 This is optional at the ABI level, but providers intended for redistribution SHOULD provide it so
 hosts can make informed choices about:
 
 - platform constraints,
 - feature completeness,
-- and **licensing policy** (for example "permissive only" builds).
+- and **legal selection policy** (for example "permissive only" or "allow weak copyleft but deny
+  patent-sensitive routes").
 
-Recommended top-level keys (v0 guidance):
+New legal metadata should separate these facts:
 
-- `provider_id` (string, stable)
-- `provider_version` (string, semver recommended)
-- `profiles` (array of strings; implemented profile IDs)
-- `deps` (array of objects): `{ "name", "version", "spdx", "license_class" }`
-- `license` (object): `{ "spdx", "license_class" }` for the provider module as shipped
-- `behavior` (object): host-safety and diagnostics policy summary
+- `module_license`: license of the provider module as shipped
+- `effective_license`: legal posture of selecting the provider without a narrower route
+- `dependency_closure`: actual required/optional closure of the build
+- `routes`: narrower execution paths whose legal posture differs materially
 
-Where:
+And it should treat these as separate policy axes:
 
-- `spdx` is an SPDX license expression (example: `MIT`, `LGPL-2.1-or-later`, `GPL-2.0-or-later`).
-- `license_class` is a coarse bucket for policy, one of:
-  - `permissive` (MIT/BSD/ISC/zlib/public-domain/etc.)
-  - `patent` (Apache-2.0/MPL-2.0/etc.)
-  - `weak_copyleft` (LGPL/MPL file-level copyleft)
-  - `strong_copyleft` (GPL/AGPL)
+- copyleft severity (`permissive`, `weak_copyleft`, `strong_copyleft`, `unknown`)
+- patent posture (`ordinary`, `explicit_grant`, `sensitive`, `restricted`, `unknown`)
 
-Providers that wrap dual-license or build-option-sensitive libraries (example: FFmpeg configured as
-LGPL vs GPL) MUST report the **effective** license expression of the built artifact they ship.
+The older single-field `license_class` guidance is retained only as a legacy JSON fallback. New
+metadata should not use `patent` as a replacement for a patent posture field.
+
+Built-in legal presets should standardize only copyleft ceilings:
+
+- `permissive_only`
+- `up_to_weak_copyleft`
+- `up_to_strong_copyleft`
+
+Patent posture, unknown handling, and optional runtime-component rules remain separate policy
+inputs.
+
+Selectability rule:
+
+- a preset is selectable only if every required profile (and optional route selector such as
+  `codec=h264`) has at least one satisfying provider/route on the current machine.
+
+Providers that wrap route-sensitive stacks (FFmpeg, GStreamer, plugin-driven backends, etc.) MUST
+expose route metadata when different execution paths carry materially different legal consequences.
+If they cannot determine the actual route yet, they must report `effective_license` conservatively
+or as `unknown`.
+
+See `OBI_LEGAL_SELECTION.md` for the normative selector model and JSON mapping guidance.
 
 Recommended `behavior` shape:
 
@@ -157,7 +177,16 @@ Example (shape only; values are illustrative):
   "provider_id": "obi.provider:net.http.curl",
   "provider_version": "0.1.0",
   "profiles": ["obi.profile:net.http_client-0"],
-  "license": {"spdx": "MPL-2.0", "license_class": "patent"},
+  "module_license": {
+    "spdx_expression": "MPL-2.0",
+    "copyleft_class": "weak_copyleft",
+    "patent_posture": "ordinary"
+  },
+  "effective_license": {
+    "spdx_expression": "MPL-2.0",
+    "copyleft_class": "weak_copyleft",
+    "patent_posture": "ordinary"
+  },
   "behavior": {
     "host_stdio": {"stdout": "never", "stderr": "never"},
     "host_process_termination": "never",
@@ -168,15 +197,35 @@ Example (shape only; values are illustrative):
       "last_error_utf8": "borrowed_until_next_call_or_destroy"
     }
   },
-  "deps": [
-    {"name": "libcurl", "version": "8.6.0", "spdx": "curl", "license_class": "permissive"},
-    {"name": "OpenSSL", "version": "3.2.0", "spdx": "Apache-2.0", "license_class": "patent"}
+  "dependency_closure": [
+    {
+      "dependency_id": "libcurl",
+      "name": "libcurl",
+      "version": "8.6.0",
+      "relation": "required_runtime",
+      "legal": {
+        "spdx_expression": "curl",
+        "copyleft_class": "permissive",
+        "patent_posture": "ordinary"
+      }
+    },
+    {
+      "dependency_id": "openssl",
+      "name": "OpenSSL",
+      "version": "3.2.0",
+      "relation": "required_runtime",
+      "legal": {
+        "spdx_expression": "Apache-2.0",
+        "copyleft_class": "permissive",
+        "patent_posture": "explicit_grant"
+      }
+    }
   ]
 }
 ```
 
 Hosts and runtimes MAY enforce policy at provider load/selection time using this metadata (allow
-lists, deny lists, and/or license profiles).
+lists, deny lists, preset ceilings, and/or custom legal selector policies).
 
 ---
 

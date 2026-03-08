@@ -3,13 +3,14 @@
 
 **Document Type:** Reference index (normative)  
 **Status:** Draft  
-**Last Updated:** 2026-03-06
+**Last Updated:** 2026-03-08
 
 ---
 
 This directory contains reference C headers defining the normative ABI shapes used by OBI:
 
 - `obi_core_v0.h` - core types (status codes, host/provider shape, diagnostics, stream helpers)
+- `obi_legal_v0.h` - typed legal metadata and selector data model
 - `profiles/` - per-profile handle structs, vtables, and capability bits
 
 Canonical source:
