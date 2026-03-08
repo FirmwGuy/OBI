@@ -3,13 +3,13 @@
 
 **Document Type:** Reference index (normative)  
 **Status:** Draft  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-06
 
 ---
 
 This directory contains reference C headers defining the normative ABI shapes used by OBI:
 
-- `obi_core_v0.h` - core types (status codes, host/provider shape, stream helpers)
+- `obi_core_v0.h` - core types (status codes, host/provider shape, diagnostics, stream helpers)
 - `profiles/` - per-profile handle structs, vtables, and capability bits
 
 Canonical source:
@@ -23,11 +23,14 @@ Shipped profile ABIs (v0):
 - `profiles/obi_pump_v0.h` - `obi.profile:core.pump-0`
 - `profiles/obi_waitset_v0.h` - `obi.profile:core.waitset-0`
 - `profiles/obi_cancel_v0.h` - `obi.profile:core.cancel-0`
+- `profiles/obi_time_datetime_v0.h` - `obi.profile:time.datetime-0`
 - `profiles/obi_os_fs_v0.h` - `obi.profile:os.fs-0`
 - `profiles/obi_os_env_v0.h` - `obi.profile:os.env-0`
 - `profiles/obi_os_process_v0.h` - `obi.profile:os.process-0`
 - `profiles/obi_os_dylib_v0.h` - `obi.profile:os.dylib-0`
 - `profiles/obi_os_fs_watch_v0.h` - `obi.profile:os.fs_watch-0`
+- `profiles/obi_ipc_bus_v0.h` - `obi.profile:ipc.bus-0`
+- `profiles/obi_hw_gpio_v0.h` - `obi.profile:hw.gpio-0`
 - `profiles/obi_gfx_types_v0.h` - shared gfx types (window IDs)
 - `profiles/obi_geom_types_v0.h` - shared geometry types (vec/mat/color/rect)
 - `profiles/obi_gfx_window_input_v0.h` - `obi.profile:gfx.window_input-0`
@@ -43,6 +46,7 @@ Shipped profile ABIs (v0):
 - `profiles/obi_text_raster_cache_v0.h` - `obi.profile:text.raster_cache-0`
 - `profiles/obi_text_layout_v0.h` - `obi.profile:text.layout-0`
 - `profiles/obi_text_spellcheck_v0.h` - `obi.profile:text.spellcheck-0`
+- `profiles/obi_text_regex_v0.h` - `obi.profile:text.regex-0`
 - `profiles/obi_text_ime_v0.h` - `obi.profile:text.ime-0`
 - `profiles/obi_doc_inspect_v0.h` - `obi.profile:doc.inspect-0`
 - `profiles/obi_doc_text_decode_v0.h` - `obi.profile:doc.text_decode-0`
@@ -63,6 +67,7 @@ Shipped profile ABIs (v0):
 - `profiles/obi_data_file_type_v0.h` - `obi.profile:data.file_type-0`
 - `profiles/obi_data_serde_events_v0.h` - `obi.profile:data.serde_events-0`
 - `profiles/obi_data_serde_emit_v0.h` - `obi.profile:data.serde_emit-0`
+- `profiles/obi_data_uri_v0.h` - `obi.profile:data.uri-0`
 - `profiles/obi_db_kv_v0.h` - `obi.profile:db.kv-0`
 - `profiles/obi_db_sql_v0.h` - `obi.profile:db.sql-0`
 - `profiles/obi_crypto_random_v0.h` - `obi.profile:crypto.random-0`

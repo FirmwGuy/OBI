@@ -5,7 +5,7 @@
 **Document Type:** Core specification (normative)  
 **Status:** Draft / Experimental  
 **Spec Version:** v0.1.0 (Draft)  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-06
 
 ---
 
@@ -16,7 +16,7 @@ OBI standardizes how a system integrates third-party libraries and subsystems be
 
 - capability discovery (what is supported),
 - lifetimes and ownership (who frees what),
-- error reporting (no ad-hoc stderr logging),
+- error reporting (status-first, host-directed diagnostics, no ad-hoc stderr logging),
 - threading and event-loop requirements,
 - minimal, stable ABI shapes (C-compatible).
 
@@ -92,7 +92,7 @@ Profiles have:
 
 The **host** is the runtime embedding OBI providers (CEP, a test harness, an app). The host:
 
-- supplies allocator/log/time callbacks (so providers do not assume `malloc`/stderr),
+- supplies allocator/log/diagnostic/time callbacks (so providers do not assume `malloc`/stderr),
 - loads providers (statically or dynamically),
 - selects which provider(s) to use per profile at runtime.
 
@@ -154,15 +154,28 @@ OBI reference headers live under `abi/`. The conventions are:
 
 ## 5. Error Model
 
-OBI APIs return an `obi_status` code (see `abi/obi_core_v0.h`). Providers MUST NOT:
+OBI APIs return an `obi_status` code (see `abi/obi_core_v0.h`). This is the authoritative
+machine-readable result channel.
 
-- print errors to stderr as their primary reporting channel,
-- terminate the process on recoverable errors.
+Supplementary diagnostics MAY be emitted through host callbacks or profile-specific UTF-8 error
+views, but they do not replace `obi_status`.
+
+Providers MUST NOT:
+
+- write unsolicited diagnostics to the embedding process's `stdout` or `stderr`,
+- terminate the embedding host process (`exit`, `abort`, `quick_exit`, etc.) as an error-reporting
+  mechanism,
+- require callers to free ad-hoc heap-allocated error strings through undocumented conventions.
 
 Providers SHOULD:
 
-- log via the host callback when useful,
-- return structured errors via profile-specific mechanisms when needed.
+- emit structured diagnostics through the host diagnostic callback when available,
+- use the host log callback only for human-oriented best-effort text,
+- expose profile-specific `last_error_utf8` or equivalent views only when the profile documents the
+  exact lifetime and ownership rules.
+
+An OBI "fatal" condition means the current call, object, provider instance, or runtime can no
+longer proceed safely. It never means "terminate the host process."
 
 ---
 

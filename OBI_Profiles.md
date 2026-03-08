@@ -3,7 +3,7 @@
 
 **Document Type:** Informative companion (non-normative)  
 **Applies To:** OBI v0.1.0 (Draft)  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-06
 
 ---
 
@@ -73,6 +73,9 @@ the profiles they need.
 3e) **Dynamic Libraries** (`obi.profile:os.dylib-0`)  
    Load shared libraries and lookup symbols (plugin/provider discovery).
 
+3f) **IPC Bus** (`obi.profile:ipc.bus-0`)  
+   D-Bus/XPC/named-pipe class local message bus for service calls and signal subscriptions.
+
 ### GUI baseline (common for tools and POCs)
 
 4) **Window + Input** (`obi.profile:gfx.window_input-0`)  
@@ -112,6 +115,9 @@ the profiles they need.
 
 13b) **IME** (`obi.profile:text.ime-0`)  
     Composition-aware text input events (preedit/commit) for editors and complex text entry.
+
+13c) **Regex** (`obi.profile:text.regex-0`)  
+    Compiled UTF-8 regular expressions for search, validation, and capture extraction.
 
 ### Networking baseline (needed for internet services)
 
@@ -169,6 +175,9 @@ the profiles they need.
 
 26c) **Serde Emit** (`obi.profile:data.serde_emit-0`)  
     Event-based emission for JSON/YAML/TOML-style formats (stream events to an `obi_writer_v0`).
+
+26d) **URI** (`obi.profile:data.uri-0`)  
+    Parse, normalize, percent-encode/decode, and optionally resolve URI references.
 
 ### Document baseline (optional for content ingestion and open standards)
 

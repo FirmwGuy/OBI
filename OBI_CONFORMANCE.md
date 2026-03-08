@@ -4,7 +4,7 @@
 **Repository:** OBI  
 **Document Type:** Conformance guidance (informative)  
 **Status:** Draft  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-06
 
 ---
 
@@ -40,7 +40,9 @@ For each provider instance:
    - documents thread affinity and concurrency rules
 7. Error behavior
    - returns `obi_status` codes consistently
-   - does not crash/exit on recoverable errors
+   - does not write unsolicited diagnostics to process-global `stdout` or `stderr`
+   - does not terminate the embedding host process as an error-reporting mechanism
+   - uses host diagnostic/log callbacks when supplied instead of ad-hoc global output
 
 ---
 
@@ -63,6 +65,9 @@ For each host integrating providers:
    - serializes calls when thread-safety is not guaranteed
 6. Shutdown correctness
    - destroys jobs/readers/responses before destroying the provider (unless documented otherwise)
+7. Diagnostics correctness
+   - does not assume logs are parseable or stable
+   - copies borrowed error/diagnostic strings before the next provider call if it needs to retain them
 
 ---
 
@@ -75,4 +80,3 @@ about behavior, not just headers. This spec repo provides the checklists and ABI
 **Q: What is the minimum a host should do?**  
 Validate ABI majors, check `struct_size` for optional calls, obey ownership, and follow threading
 rules. Those four prevent most integration failures.
-

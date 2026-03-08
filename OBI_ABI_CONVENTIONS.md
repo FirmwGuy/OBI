@@ -4,7 +4,7 @@
 **Repository:** OBI  
 **Document Type:** ABI conventions (normative)  
 **Status:** Draft  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-06
 
 ---
 
@@ -78,7 +78,27 @@ Every pointer returned across the interface must have one of these lifetimes:
 If ownership is not specified, hosts MUST assume "borrowed" and providers MUST assume "caller does
 not free".
 
-### 2.6 Async calls must not retain borrowed pointers
+### 2.6 Error text and diagnostics must have explicit lifetime
+
+`obi_status` is the primary machine-readable error channel.
+
+Supplementary human-readable diagnostics must use one of these patterns:
+
+- a structured callback payload documented in the ABI (for example `obi_diagnostic_v0` delivered via
+  `obi_host_v0.emit_diagnostic`)
+- a borrowed `obi_utf8_view_v0` whose lifetime is explicitly documented
+- a caller-owned buffer using the standard `OBI_STATUS_BUFFER_TOO_SMALL` retry pattern
+
+Forbidden patterns:
+
+- returning heap-owned `char*` error strings without an ABI-specified free rule
+- requiring callers to infer ownership from library-specific conventions
+- relying on process-global `stdout` or `stderr` as the only error channel
+
+Strings delivered through a host diagnostic callback are borrowed for the duration of the callback
+only unless a profile or core ABI document explicitly states otherwise.
+
+### 2.7 Async calls must not retain borrowed pointers
 
 For any async submission API:
 
@@ -87,7 +107,7 @@ For any async submission API:
 
 "Borrowed but used later" is forbidden.
 
-### 2.7 Reserved fields are required
+### 2.8 Reserved fields are required
 
 ABI-visible structs SHOULD include reserved fields to allow future expansion without breaking ABI.
 Reserved fields MUST be zeroed by callers and ignored by providers unless specified otherwise.
@@ -103,4 +123,3 @@ how most third-party libraries expose stable interfaces.
 **Q: Why use vtables instead of linking directly?**  
 Vtables make provider selection and swapping explicit, reduce symbol collisions, and allow runtime
 capability checks without build-time coupling.
-

@@ -4,7 +4,7 @@
 **Repository:** OBI  
 **Document Type:** FAQ (informative)  
 **Status:** Draft  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-06
 
 ---
 
@@ -86,6 +86,32 @@ versioned profiles with explicit lifetimes and caps.
 Because the "best" library depends on platform, policy, licensing, performance constraints, and
 deployment. OBI exists to keep those choices modular and reversible.
 
+**Q: How do hosts select providers under licensing constraints (MIT-only, LGPL-only, GPL allowed, etc.)?**  
+Licensing decisions live in the host's configuration and policy plane, not inside profile APIs.
+In practice, hosts select providers by:
+
+- choosing which provider modules to ship/load, and
+- applying a selection policy (preferred/denied/bindings).
+
+For automation, providers should implement `describe_json` metadata including effective license
+information for the provider module and its key dependencies. See `OBI_PROVIDER_GUIDE.md` section
+2.7 for recommended fields and coarse `license_class` buckets.
+
+**Q: How should providers report errors, warnings, and debug information without hijacking stderr/stdout?**  
+Use `obi_status` as the primary result, then supplement it with host-directed diagnostics:
+
+- structured diagnostics via `obi_host_v0.emit_diagnostic` when available,
+- best-effort human-readable logging via `obi_host_v0.log`,
+- profile-specific borrowed `last_error_utf8` views only when the profile documents lifetime rules.
+
+Conforming providers should not write unsolicited diagnostics to process-global `stdout`/`stderr`
+and should not terminate the embedding host process as an error-reporting mechanism.
+
+**Q: Can hosts reject providers based on operational behavior, not just licensing?**  
+Yes. Providers may expose host-safety and diagnostics behavior in `describe_json()` metadata (for
+example direct stdio usage, process-termination policy, and whether they emit structured
+diagnostics). Hosts may use that metadata as part of provider selection policy.
+
 **Q: How do we avoid "leaky abstractions"?**  
 By being honest about what is stable:
 
@@ -107,4 +133,3 @@ to capture stable bytes/streams/hashes when determinism is required.
 In the host and its policy planes (CEP enclaves/caps/budgets; OGIF OmniPolicy at the interface).
 OBI profiles may expose knobs like "verify TLS peer", but permission to use them is not granted by
 OBI.
-

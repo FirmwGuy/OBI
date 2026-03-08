@@ -4,7 +4,7 @@
 **Repository:** OBI  
 **Document Type:** Implementation guidance (informative)  
 **Status:** Draft  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-06
 
 ---
 
@@ -51,7 +51,8 @@ policy choices.
 Providers receive an `obi_host_v0` from the host. They MUST:
 
 - use host allocators when returning host-owned memory (unless the profile specifies otherwise),
-- use the host log callback (if provided) instead of stderr,
+- prefer the host diagnostic callback when available for warnings/errors/fatal conditions,
+- use the host log callback (if provided) for human-oriented text instead of process-global stderr,
 - tolerate optional NULL hooks (host may omit logging or wallclock).
 
 ### 2.4 `get_profile` rules
@@ -88,7 +89,94 @@ Provider-level caps are defined in `abi/obi_core_v0.h`:
 
 Providers should treat `obi_status` codes as the authoritative error channel.
 
-Logging is best-effort diagnostics, not a contract. Do not encode parseable state only in logs.
+Rules:
+
+- do not write unsolicited diagnostics to the embedding host process's `stdout` or `stderr`,
+- do not terminate the embedding host process as an error-reporting strategy,
+- do not encode machine-required state only in logs or free-form strings.
+
+When the host exposes `obi_host_v0.emit_diagnostic` (detected via `struct_size`), providers SHOULD
+prefer it for structured diagnostics. When only `log` is available, providers MAY emit best-effort
+human-readable text there. If neither callback is present, providers should remain silent except for
+return values and documented profile-specific error views.
+
+### 2.7 Provider metadata (`describe_json`) and licensing
+
+Providers MAY implement `obi_provider_api_v0.describe_json` to return tool-friendly metadata as a
+JSON object string.
+
+This is optional at the ABI level, but providers intended for redistribution SHOULD provide it so
+hosts can make informed choices about:
+
+- platform constraints,
+- feature completeness,
+- and **licensing policy** (for example "permissive only" builds).
+
+Recommended top-level keys (v0 guidance):
+
+- `provider_id` (string, stable)
+- `provider_version` (string, semver recommended)
+- `profiles` (array of strings; implemented profile IDs)
+- `deps` (array of objects): `{ "name", "version", "spdx", "license_class" }`
+- `license` (object): `{ "spdx", "license_class" }` for the provider module as shipped
+- `behavior` (object): host-safety and diagnostics policy summary
+
+Where:
+
+- `spdx` is an SPDX license expression (example: `MIT`, `LGPL-2.1-or-later`, `GPL-2.0-or-later`).
+- `license_class` is a coarse bucket for policy, one of:
+  - `permissive` (MIT/BSD/ISC/zlib/public-domain/etc.)
+  - `patent` (Apache-2.0/MPL-2.0/etc.)
+  - `weak_copyleft` (LGPL/MPL file-level copyleft)
+  - `strong_copyleft` (GPL/AGPL)
+
+Providers that wrap dual-license or build-option-sensitive libraries (example: FFmpeg configured as
+LGPL vs GPL) MUST report the **effective** license expression of the built artifact they ship.
+
+Recommended `behavior` shape:
+
+- `host_stdio`: object with `stdout` and `stderr` fields; conforming providers should report
+  `"never"` for both
+- `host_process_termination`: string; conforming providers should report `"never"`
+- `diagnostics`: object with booleans and/or strings describing which channels are implemented:
+  `status_codes`, `structured_callback`, `log_callback`, `last_error_utf8`
+
+Recommended `last_error_utf8` values:
+
+- `"none"` if the provider exposes no profile-specific borrowed error strings
+- `"borrowed_until_next_call_or_destroy"` if it exposes short-lived borrowed UTF-8 views
+- `"caller_buffer_copyout"` if text is returned via caller-owned buffers
+
+Hosts MAY reject providers whose declared behavior is incompatible with host policy, even before
+considering licensing.
+
+Example (shape only; values are illustrative):
+
+```json
+{
+  "provider_id": "obi.provider:net.http.curl",
+  "provider_version": "0.1.0",
+  "profiles": ["obi.profile:net.http_client-0"],
+  "license": {"spdx": "MPL-2.0", "license_class": "patent"},
+  "behavior": {
+    "host_stdio": {"stdout": "never", "stderr": "never"},
+    "host_process_termination": "never",
+    "diagnostics": {
+      "status_codes": true,
+      "structured_callback": true,
+      "log_callback": true,
+      "last_error_utf8": "borrowed_until_next_call_or_destroy"
+    }
+  },
+  "deps": [
+    {"name": "libcurl", "version": "8.6.0", "spdx": "curl", "license_class": "permissive"},
+    {"name": "OpenSSL", "version": "3.2.0", "spdx": "Apache-2.0", "license_class": "patent"}
+  ]
+}
+```
+
+Hosts and runtimes MAY enforce policy at provider load/selection time using this metadata (allow
+lists, deny lists, and/or license profiles).
 
 ---
 

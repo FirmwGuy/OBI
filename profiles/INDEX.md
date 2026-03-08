@@ -4,7 +4,7 @@
 **Repository:** OBI  
 **Document Type:** Index (informative)  
 **Status:** Draft  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-06
 
 ---
 
@@ -13,11 +13,14 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:core.pump-0` (Core Pump): [OBI_CorePump.md](OBI_CorePump.md)
 - `obi.profile:core.waitset-0` (Core WaitSet): [OBI_CoreWaitSet.md](OBI_CoreWaitSet.md)
 - `obi.profile:core.cancel-0` (Core Cancel): [OBI_CoreCancel.md](OBI_CoreCancel.md)
+- `obi.profile:time.datetime-0` (Time Date/Time): [OBI_TimeDateTime.md](OBI_TimeDateTime.md)
 - `obi.profile:os.fs-0` (Filesystem): [OBI_OsFS.md](OBI_OsFS.md)
 - `obi.profile:os.env-0` (Environment): [OBI_OsEnv.md](OBI_OsEnv.md)
 - `obi.profile:os.process-0` (Process): [OBI_OsProcess.md](OBI_OsProcess.md)
 - `obi.profile:os.dylib-0` (Dynamic Libraries): [OBI_OsDylib.md](OBI_OsDylib.md)
 - `obi.profile:os.fs_watch-0` (Filesystem Watch): [OBI_OsFSWatch.md](OBI_OsFSWatch.md)
+- `obi.profile:ipc.bus-0` (IPC Bus): [OBI_IpcBus.md](OBI_IpcBus.md)
+- `obi.profile:hw.gpio-0` (Hardware GPIO): [OBI_HWGPIO.md](OBI_HWGPIO.md)
 - `obi.profile:gfx.window_input-0` (Window + Input): [OBI_GfxWindowInput.md](OBI_GfxWindowInput.md)
 - `obi.profile:gfx.render2d-0` (2D Rendering): [OBI_GfxRender2D.md](OBI_GfxRender2D.md)
 - `obi.profile:gfx.gpu_device-0` (GPU Device): [OBI_GfxGPUDevice.md](OBI_GfxGPUDevice.md)
@@ -39,6 +42,7 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:text.raster_cache-0` (Glyph Rasterization + Cache): [OBI_TextRasterCache.md](OBI_TextRasterCache.md)
 - `obi.profile:text.layout-0` (Text Layout): [OBI_TextLayout.md](OBI_TextLayout.md)
 - `obi.profile:text.spellcheck-0` (Spellcheck): [OBI_TextSpellcheck.md](OBI_TextSpellcheck.md)
+- `obi.profile:text.regex-0` (Regex): [OBI_TextRegex.md](OBI_TextRegex.md)
 - `obi.profile:text.ime-0` (IME): [OBI_TextIME.md](OBI_TextIME.md)
 - `obi.profile:net.dns-0` (DNS): [OBI_NetDNS.md](OBI_NetDNS.md)
 - `obi.profile:net.socket-0` (Sockets): [OBI_NetSocket.md](OBI_NetSocket.md)
@@ -51,6 +55,7 @@ This index lists the profile documents currently present in this repository.
 - `obi.profile:data.file_type-0` (File Type Detection): [OBI_DataFileType.md](OBI_DataFileType.md)
 - `obi.profile:data.serde_events-0` (Serde Events): [OBI_DataSerdeEvents.md](OBI_DataSerdeEvents.md)
 - `obi.profile:data.serde_emit-0` (Serde Emit): [OBI_DataSerdeEmit.md](OBI_DataSerdeEmit.md)
+- `obi.profile:data.uri-0` (URI): [OBI_DataURI.md](OBI_DataURI.md)
 
 - `obi.profile:db.kv-0` (KV Database): [OBI_DbKV.md](OBI_DbKV.md)
 - `obi.profile:db.sql-0` (SQL Database): [OBI_DbSQL.md](OBI_DbSQL.md)
