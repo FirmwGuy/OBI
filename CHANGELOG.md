@@ -3,7 +3,7 @@
 
 **Document Type:** Changelog  
 **Status:** Draft  
-**Last Updated:** 2026-03-01
+**Last Updated:** 2026-03-07
 
 ---
 
@@ -54,6 +54,25 @@ The canonical spec version is defined in `OBI.md`.
 - Added a spellcheck profile (aspell/hunspell/enchant-style)
 - Added asset import profiles for meshes and scenes (OBJ/glTF/assimp-style integrations)
 - Added tooling to keep mirrored ABI headers in sync with the canonical `OBI-ABI` repository
+
+### Changed
+
+- Clarified that `obi_window_id_v0` is a provider-instance-local handle by default across
+  `gfx.window_input-0`, `gfx.gpu_device-0`, and `gfx.render3d-0`; cross-provider window-handle
+  interop now requires an explicit future contract or provider-documented bridge.
+- Clarified that `obi_text_face_id_v0` is provider-local and must not be exchanged across text
+  providers as if it were globally portable.
+- Defined the split text-provider interoperability contract around `font bytes + face_index`,
+  allowing `text.font_db-0` sources to be consumed independently by `text.raster_cache-0` and
+  `text.shape-0` without sharing raw face IDs.
+- Documented optional face-loading support in `text.shape-0` so shaping and rasterization providers
+  may load equivalent provider-local faces from the same source bytes.
+- Clarified that shaped `glyph_index` values refer to the loaded font face's glyph numbering rather
+  than provider-private remapped handles.
+- Clarified that `text.layout-0` remains a same-provider composition surface in v0 even though
+  split shaping+rasterization interop is now defined separately.
+- Expanded provider guidance with concrete provider-local handle examples (`obi_window_id_v0`,
+  `obi_text_face_id_v0`) to prevent accidental cross-provider assumptions.
 
 ## [0.1.0] - 2026-03-01
 

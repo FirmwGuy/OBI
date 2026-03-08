@@ -39,6 +39,10 @@ For hosts that only need "just enough 3D" for tools, prefer `obi.profile:gfx.ren
 Rendering targets a window swapchain via begin/end frame calls. A frame contains one or more
 passes.
 
+The window ID passed to begin/end frame is provider-instance-local. Hosts MUST assume it came from
+`obi.profile:gfx.window_input-0` on the same provider instance unless the selected provider
+explicitly documents a cross-provider bridge.
+
 ### 2.2 Shaders
 
 Shader formats vary across ecosystems. This profile supports multiple formats via capability bits
@@ -84,4 +88,3 @@ The normative C ABI for this profile is defined in:
 **Q: Why not just use Vulkan everywhere?**  
 Because many hosts want to remain portable and keep optional dependencies. This profile makes it
 possible to choose a backend at runtime while keeping a stable integration contract.
-

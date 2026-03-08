@@ -188,7 +188,9 @@ profiles and honors lifetime/threading rules.
 
 **Q: Can a provider implement multiple profiles that share internal objects?**  
 Yes, and this is common (for example window_input + render2d sharing a GPU context). Cross-profile
-handle interoperability is only guaranteed within the same provider instance.
+handle interoperability is only guaranteed within the same provider instance unless a profile
+specification explicitly says otherwise. Concrete v0 examples include `obi_window_id_v0` and
+`obi_text_face_id_v0`, which hosts must treat as provider-local handles.
 
 **Q: How do we handle licensing or platform constraints?**  
 Those decisions live in host configuration and policy. OBI makes it cheap to swap providers when

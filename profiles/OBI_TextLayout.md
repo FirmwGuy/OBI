@@ -35,7 +35,8 @@ This profile is intended to work with:
 ### 2.1 Face identity and provider composition
 
 This profile references `obi_text_face_id_v0` in its style spans. Face IDs are provider-owned and
-typically created by the same provider via `obi.profile:text.raster_cache-0`.
+provider-local; they are typically created by the same provider (or documented same-instance text
+family) via `obi.profile:text.raster_cache-0`.
 
 Hosts should expect to choose one provider that implements:
 
@@ -43,6 +44,10 @@ Hosts should expect to choose one provider that implements:
 - `text.raster_cache`
 - `text.shape` (optional)
 - `text.layout`
+
+Unlike the split `text.shape` + `text.raster_cache` interop path, `text.layout` remains a
+same-provider composition surface in v0. Hosts should not assume that face IDs accepted or emitted
+by a layout provider are portable to unrelated providers.
 
 ### 2.2 Coordinate system
 
@@ -89,4 +94,3 @@ The normative C ABI for this profile is defined in:
 **Q: Why not return a GPU-ready glyph atlas?**  
 Atlas policy depends on host memory budgets and caching rules. This profile returns positioned
 glyphs; the host packs glyph bitmaps into an atlas and draws quads via `gfx.render2d`.
-

@@ -40,6 +40,10 @@ Meshes, textures, and materials are provider-owned IDs. IDs are scoped to the pr
 
 Input vertex/index data passed to create calls is borrowed for the duration of the call only.
 
+Window IDs passed to `begin_frame` / `end_frame` are likewise provider-instance-local and should be
+assumed to come from `obi.profile:gfx.window_input-0` on the same provider instance unless the
+provider explicitly documents otherwise.
+
 ---
 
 ## 3. Conformance
@@ -75,4 +79,3 @@ The normative C ABI for this profile is defined in:
 **Q: Why have both render3d and gpu_device?**  
 Because many tools need "just enough 3D" without adopting a full GPU abstraction. `render3d` can
 be implemented by simple engines, while `gpu_device` is for hosts that need more control.
-

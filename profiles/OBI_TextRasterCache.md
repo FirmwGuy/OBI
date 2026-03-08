@@ -32,6 +32,10 @@ Font faces are provider-owned opaque IDs (`obi_text_face_id_v0`) created from fo
 
 Face IDs are only meaningful within the provider instance that created them.
 
+The `face_create_from_bytes(font_bytes, face_index, ...)` contract is intentionally shared with
+`obi.profile:text.shape-0`. Hosts may load equivalent provider-local faces into separate shaping
+and rasterization providers from the same font source without exchanging raw face IDs.
+
 ### 2.2 Metrics
 
 For a given face and pixel size, providers return a `obi_text_metrics_v0`:
@@ -59,7 +63,8 @@ Some hosts want to rasterize by Unicode codepoint directly. Providers may expose
 map codepoints to glyph indices.
 
 Shaping engines typically produce glyph indices; for shaped text rendering, cmap lookup is not
-required.
+required. Those glyph indices are expected to be the font's own glyph indices, not provider-private
+remapped handles.
 
 ---
 
@@ -97,4 +102,3 @@ own atlas and caching rules, while still allowing providers to cache internally.
 **Q: Should bitmaps be premultiplied alpha?**  
 For RGBA8 bitmaps, premultiplied alpha is recommended. Providers should document the exact pixel
 semantics.
-

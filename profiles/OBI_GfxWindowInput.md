@@ -29,7 +29,9 @@ future 3D profile) for drawing.
 - The host obtains an `obi_window_input_v0` handle from a provider.
 - Windows are identified by an opaque `obi_window_id_v0`.
 
-Window IDs are provider-defined and only valid with the profile handle that created them.
+Window IDs are provider-defined and provider-instance-local. They are only valid with gfx profile
+handles obtained from the same provider instance, unless a future profile revision or a
+provider-documented bridge says otherwise.
 
 ### 2.2 Event model
 
@@ -116,4 +118,3 @@ Text input is handled separately via UTF-8 events.
 **Q: Does this profile support gamepads?**  
 Not in v0. A future `obi.profile:input.gamepad-*` profile can cover that without bloating the window
 surface.
-
